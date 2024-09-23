@@ -1,0 +1,584 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'MBKCorpoS', sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+}
+
+/*** chat ***/
+.chat {
+    display: none;
+}
+
+/*** header ***/
+header {
+    width: 100%;
+    height: 110px;
+    padding: 0 80px 0 80px;
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(65, 65, 65, 0.6);
+}
+header .logo img {
+    width: 45px;
+}
+
+/* nav */
+header nav .main-menu {
+    padding-left: 240px;
+    display: flex;
+}
+header nav .main-menu li {
+    padding-right: 100px;
+}
+header nav .main-menu li a {
+    color: #ffffff;
+}
+
+header nav .sub-menu {
+    display: none;
+}
+header nav .sub-menu.hover {
+    display: block;
+}
+
+/* side-menu */
+header .side-menu {
+    display: flex;
+    gap: 25px;
+    margin-left: auto;
+    align-items: center;
+}
+header .side-menu a {
+    color: #ffffff;
+}
+header .side-menu a img {
+    width: 24px;
+}
+
+/*** main ***/
+.main {
+    width: 100%;
+    height: 900px;
+    padding: 0 80px 0 80px;
+    position: relative;
+}
+.main .title {
+    position: absolute;
+    top: 500px;
+}
+.main .title h1 {
+    font-family: 'MBK CorpoA', serif;
+    font-size: 170px;
+    color: #ffffff;
+}
+.main .title h2 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'MBKCorpoSLight', sans-serif;
+    color: #ffffff;
+}
+/* button */
+.main .title .title-btn {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.main .title .title-btn .btn1 {
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+}
+.main .title .title-btn .btn1:hover {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+.main .title .title-btn .btn1 img {
+    margin-left: 5px;
+    width: 14px;
+}
+.main .title .title-btn .btn2 {
+    padding: 10px 20px;
+    margin-left: 15px;
+    border-radius: 50px;
+    background-color: #006CD0;
+    color: #ffffff;
+    transition: 0.2s ease-in-out;
+}
+.main .title .title-btn .btn2:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+.main .title p {
+    margin-top: 50px;
+    font-size: 14px;
+}
+.main video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 900px;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -99;
+}
+
+/*** intro ***/
+.intro {
+    width: 100%;
+    height: 1300px;
+    padding-top: 230px;
+    background-color: #000000;
+    text-align: center;
+}
+.intro h2 {
+    width: 60%;
+    margin: auto;
+    font-family: 'MBK CorpoA', serif;
+    font-size: 90px;
+    color: #ffffff;
+}
+.intro video {
+    width: 40%;
+    padding-top: 55px;
+}
+
+/*** recommendation ***/
+.recommen {
+    width: 100%;
+    height: 3300px;
+    padding-left: 80px;
+    background-color: #000000;
+
+    position: relative;
+}
+.recommen .menu {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 0;
+}
+.recommen .menu a {
+    padding: 10px 0 5px 15px;
+    border-left: 1px solid #555555;
+    color: #555555;
+}
+.recommen .menu a:first-of-type {
+    border-left: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+/* recommen list */
+.recommen .list {
+    padding-left: 200px;
+}
+.recommen .list .recommen1,
+.recommen .list .recommen2,
+.recommen .list .recommen3,
+.recommen .list .recommen4 {
+    width: 100%;
+    margin-bottom: 70px;
+    display: flex;
+}
+.recommen .list .recommen1 .txt,
+.recommen .list .recommen2 .txt,
+.recommen .list .recommen3 .txt,
+.recommen .list .recommen4 .txt {
+    width: 580px;
+    padding-top: 250px;
+}
+.recommen .list .recommen1 .txt h2,
+.recommen .list .recommen2 .txt h2,
+.recommen .list .recommen3 .txt h2,
+.recommen .list .recommen4 .txt h2 {
+    font-size: 50px;
+    line-height: 1.4;
+    color: #ffffff;
+}
+.recommen .list .recommen1 .txt p,
+.recommen .list .recommen2 .txt p,
+.recommen .list .recommen3 .txt p,
+.recommen .list .recommen4 .txt p {
+    padding-top: 45px;
+    color: #B3B2B3;
+}
+
+/* 3번째 버튼만 */
+.recommen .list .recommen3 .txt a {
+    width: 230px;
+    margin-top: 70px;
+    padding: 8px 10px 8px 20px;
+    color: #ffffff;
+    background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(108, 108, 108, 0.7));
+    border-radius: 70px;
+    border: 1px solid #B3B2B3;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease-in-out;
+}
+
+.recommen .list .recommen1 .txt a,
+.recommen .list .recommen2 .txt a,
+.recommen .list .recommen4 .txt a {
+    width: 170px;
+    margin-top: 70px;
+    padding: 8px 10px 8px 20px;
+    color: #ffffff;
+    background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(108, 108, 108, 0.7));
+    border-radius: 70px;
+    border: 1px solid #B3B2B3;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease-in-out;
+}
+.recommen .list .recommen1 .txt a:hover,
+.recommen .list .recommen2 .txt a:hover,
+.recommen .list .recommen3 .txt a:hover,
+.recommen .list .recommen4 .txt a:hover {
+    color: #ffffff;
+    background: #006CD0;
+    border: 1px solid #006CD0;
+}
+.recommen .list .recommen1 .txt a > img,
+.recommen .list .recommen2 .txt a > img,
+.recommen .list .recommen3 .txt a > img,
+.recommen .list .recommen4 .txt a > img {
+    width: 45px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+.recommen .list .recommen1 > img,
+.recommen .list .recommen2 > img,
+.recommen .list .recommen3 > img,
+.recommen .list .recommen4 > img {
+    height: 750px;
+    margin-left: 80px;
+}
+
+
+/*** models ***/
+.models {
+    width: 100%;
+    height: 1500px;
+    background-color: #F9F1E8;
+    text-align: center;
+    position: relative;
+}
+.models h1 {
+    padding-top: 200px;
+    font-family: 'MBKCorpoA', serif;
+    font-size: 90px;
+    letter-spacing: 2px;
+}
+.models .options .menu {
+    width: 50px;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+}
+.models .options .menu a img {
+    margin: 0 0 20px 0;
+}
+
+/* 이미지 교체 예정 */
+.models .options .images {
+    margin: auto;
+    background-color: #fff;
+    width: 800px;
+    height: 700px;
+}
+
+/* spec */
+.models .spec {
+    width: 100%;
+    padding: 120px 80px 0 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.models .spec h2 {
+    font-size: 35px;
+}
+
+.models .link {
+    padding-top: 100px;
+}
+.models .link a {
+    font-size: 20px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.models .link a img {
+    width: 30px;
+    margin-left: 10px;
+    padding: 5px;
+    background-color: #000000;
+    border-radius: 50px;
+    transition: 0.2s ease-in-out;
+}
+.models .link a img:hover {
+    /* background-color: transparent;
+    border: 1px solid #000000; */
+}
+
+
+/*** service & acc ***/
+.service {
+    width: 100%;
+    padding: 130px 80px 0 80px;
+}
+.service .title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.service .title h2 {
+    font-family: 'MBK CorpoA', serif;
+    font-size: 60px;
+}
+.service .title a {
+    padding-bottom: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid #E5E4E5;
+    color: #000000;
+    display: flex;
+    align-items: center;
+}
+.service .title a img {
+    margin-left: 10px;
+    width: 15px;
+}
+
+/* service content-list */
+.service .content{
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+/* list 1 */
+.service .content .inner1 > img {
+    width: 595px;
+}
+.service .content .inner1 p,
+.service .content .inner2 p,
+.service .content .inner3 p {
+    padding-top: 25px;
+}
+.service .content .inner1 h3,
+.service .content .inner2 h3,
+.service .content .inner3 h3 {
+    width: 425px;
+    padding-top: 27px;
+    font-size: 22px;
+    line-height: 1.3;
+}
+.service .content .inner1 a,
+.service .content .inner2 a,
+.service .content .inner3 a {
+    width: 230px;
+    margin-top: 30px;
+    padding: 8px 10px 8px 20px;
+    color: #ffffff;
+    border: 1px solid #006CD0;
+    background-color: #006CD0;
+    border-radius: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease-in-out;
+}
+.service .content .inner1 a:hover,
+.service .content .inner2 a:hover,
+.service .content .inner3 a:hover {
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #000000;
+}
+.service .content .inner1 a img,
+.service .content .inner2 a img,
+.service .content .inner3 a img {
+    width: 45px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 30px;   
+}
+
+/* list 2 */
+.service .content .inner2 > img {
+    width: 690px;
+    height: 700px;
+    object-fit: cover;
+    object-position: 84%;
+}
+
+/* list 3 */
+.service .content .inner3 > img {
+    width: 400px;
+    height: 515px;
+    object-fit: cover;
+    object-position: 84%;
+}
+
+/* list 4 */
+.service .inner4 > img {
+    width: 595px;
+}
+
+/*** outro ***/
+.outro {
+    margin: 0 auto;
+    width: 100%;   
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+}
+.outro > h1 {
+    margin: 0 auto;
+    padding-top: 415px;
+    width: 70%;
+    font-family: 'MBK CorpoA', serif;
+    font-size: 120px;
+}
+
+/*** footer ***/
+footer {
+    padding: 160px 80px 0 80px;
+    width: 100%;
+    text-align: center;
+}
+footer h1 {
+    font-family: 'MBK CorpoA', serif;
+    font-size: 90px;
+}
+footer > a {
+    width: 300px;
+    margin: 30px auto;
+    padding: 8px 10px 8px 20px;
+    color: #ffffff;
+    border: 1px solid #006CD0;
+    background-color: #006CD0;
+    border-radius: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease-in-out;
+}
+footer > a:hover {
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #000000;
+}
+footer > a img {
+    width: 45px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+/* footer-menu */
+footer .footer-menu {
+    width: 100%;
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+footer .footer-menu li {
+    line-height: 2.5;
+    text-align: left;
+}
+footer .footer-menu li a {
+    color: #000000;
+}
+
+footer .copyright {
+    padding-top: 60px;
+    text-align: left;
+}
+footer .copyright .links {
+    width: 100%;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+footer .copyright .links a {
+    color: #B3B2B3;
+    padding-right: 10px;
+    border-right: 1px solid #B3B2B3;
+}
+footer .copyright .links a:last-of-type {
+    border: none;
+}
+
+footer .copyright h5 {
+    padding: 15px 0 25px 0;
+}
+
+footer .bottom {
+    width: 100%;
+    padding: 25px 0 60px 0;
+    text-align: left;
+    border-top: 1px solid #000000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+footer .bottom .txt {
+    line-height: 1.3;
+}
+footer .bottom .txt p {
+    font-size: 14px;
+}
+footer .bottom .sns {
+    display: flex;
+    gap: 25px;
+}
+footer .bottom a {
+    font-size: 20px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+}
+footer .bottom > a > img {
+    width: 25px;
+    padding: 5px;
+    transform: rotate(-90deg);
+    margin-left: 10px;
+    border-radius: 50px;
+    background-color: #000000;
+}
+
+/* back to top 스크립트 써야함!!!!!!!! */

@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'MBK CorpoA';
+    src: local('MBK CorpoA'),url(../assets/fonts/MBKCorpoA.woff) format('woff');
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MBK CorpoACon';
+    src: local('MBK CorpoACon'),url(../assets/fonts/MBKCorporateACon.woff) format('woff');
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MBKCorpoS';
+    src: local('MBKCorpoS'),url(../assets/fonts/MBKCorpoS.woff) format('woff');
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MBKCorpoSLight';
+    src: local('MBKCorpoSLight'),url(../assets/fonts/MBKCorporateSLight.woff) format('woff');
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+}
