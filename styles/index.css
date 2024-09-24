@@ -15,44 +15,101 @@ body {
 
 /*** chat ***/
 .chat {
-    display: none;
+    width: 100%;
+    position: relative;
+}
+.chat a {
+    position: fixed;
+    top: 800px;
+    right: 80px;
+    z-index: 9999;
+}
+.chat a img {
+    width: 60px;
+    padding: 15px;
+    background: #555555;
+    border-radius: 50px;
+    transition: 0.2s ease-in-out;
+}
+.chat a img:hover {
+    background-color: #006CD0;
 }
 
 /*** header ***/
 header {
     width: 100%;
     height: 110px;
-    padding: 0 80px 0 80px;
+    padding: 0 80px;
     display: flex;
     align-items: center;
 
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
-    background-color: rgba(65, 65, 65, 0.6);
+    z-index: 99999;
+    transition: 0.5s ease-in-out;
+}
+header:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
 }
 header .logo img {
     width: 45px;
 }
 
 /* nav */
+/* main-menu */
 header nav .main-menu {
     padding-left: 240px;
     display: flex;
+    justify-content: space-between;
 }
 header nav .main-menu li {
-    padding-right: 100px;
+    width: 280px;
+    position: relative;
 }
 header nav .main-menu li a {
     color: #ffffff;
+    padding-left: 30px;
+}
+header nav .main-menu li a span:hover {
+    border-bottom: 1px solid #ffffff;
 }
 
+/* sub-menu */
 header nav .sub-menu {
+    width: 100%;
     display: none;
+    position: absolute;
+    top: 355%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
 }
-header nav .sub-menu.hover {
+header nav .sub-menu li {
+    line-height: 3.5;
+}
+header nav .sub-menu li a {
+    width: 100%;
+    color: #ffffff;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s ease-in-out;
+
     display: block;
+}
+header nav .sub-menu li:hover a {
+    border-bottom: 1px solid #B3B2B3;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 마지막 list border-bottom 해제 */
+header nav .sub-menu li:last-child a {
+    border-bottom: none;
+}
+
+header nav .sub-menu li a svg {
+    fill: #ffffff;
+    margin-right: 10px;
 }
 
 /* side-menu */
@@ -65,10 +122,15 @@ header .side-menu {
 header .side-menu a {
     color: #ffffff;
 }
+header .side-menu a:first-of-type:hover {
+    border-bottom: 1px solid #ffffff;
+}
 header .side-menu a img {
     width: 24px;
 }
 
+
+/*** 본문 내용 시작 ***/
 /*** main ***/
 .main {
     width: 100%;
@@ -79,6 +141,7 @@ header .side-menu a img {
 .main .title {
     position: absolute;
     top: 500px;
+    z-index: 9999;
 }
 .main .title h1 {
     font-family: 'MBK CorpoA', serif;
@@ -101,20 +164,23 @@ header .side-menu a img {
     padding: 10px 20px;
     border-radius: 50px;
     border: 1px solid #ffffff;
-    background-color: #ffffff;
-    color: #000000;
+    color: #ffffff;
     display: flex;
     align-items: center;
     transition: 0.2s ease-in-out;
 }
 .main .title .title-btn .btn1:hover {
-    background-color: transparent;
+    background-color: #ffffff;
     border: 1px solid #ffffff;
-    color: #ffffff;
+    color: #101010;
 }
-.main .title .title-btn .btn1 img {
+.main .title .title-btn .btn1 svg {
     margin-left: 5px;
-    width: 14px;
+    fill: #ffffff;
+    transition: 0.2s ease-in-out;
+}
+.main .title .title-btn .btn1:hover svg {
+    fill: #101010;
 }
 .main .title .title-btn .btn2 {
     padding: 10px 20px;
@@ -126,11 +192,12 @@ header .side-menu a img {
 }
 .main .title .title-btn .btn2:hover {
     background-color: #ffffff;
-    color: #000000;
+    color: #101010;
 }
 .main .title p {
     margin-top: 50px;
     font-size: 14px;
+    color: #ffffff;
 }
 .main video {
     position: absolute;
@@ -143,12 +210,24 @@ header .side-menu a img {
     z-index: -99;
 }
 
+/*** gradient ***/
+.gradient {
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(0deg, #101010 15%, transparent 100%);
+
+    position: absolute;
+    top: 700px;
+    z-index: 999;
+}
+
 /*** intro ***/
 .intro {
     width: 100%;
     height: 1300px;
     padding-top: 230px;
-    background-color: #000000;
+    background-color: #101010;
     text-align: center;
 }
 .intro h2 {
@@ -168,7 +247,7 @@ header .side-menu a img {
     width: 100%;
     height: 3300px;
     padding-left: 80px;
-    background-color: #000000;
+    background-color: #101010;
 
     position: relative;
 }
@@ -334,7 +413,7 @@ header .side-menu a img {
 }
 .models .link a {
     font-size: 20px;
-    color: #000000;
+    color: #101010;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -343,13 +422,13 @@ header .side-menu a img {
     width: 30px;
     margin-left: 10px;
     padding: 5px;
-    background-color: #000000;
+    background-color: #101010;
     border-radius: 50px;
     transition: 0.2s ease-in-out;
 }
 .models .link a img:hover {
     /* background-color: transparent;
-    border: 1px solid #000000; */
+    border: 1px solid #101010; */
 }
 
 
@@ -371,7 +450,7 @@ header .side-menu a img {
     padding-bottom: 10px;
     font-size: 20px;
     border-bottom: 1px solid #E5E4E5;
-    color: #000000;
+    color: #101010;
     display: flex;
     align-items: center;
 }
@@ -423,9 +502,9 @@ header .side-menu a img {
 .service .content .inner1 a:hover,
 .service .content .inner2 a:hover,
 .service .content .inner3 a:hover {
-    color: #000000;
+    color: #101010;
     background: #ffffff;
-    border: 1px solid #000000;
+    border: 1px solid #101010;
 }
 .service .content .inner1 a img,
 .service .content .inner2 a img,
@@ -463,7 +542,7 @@ header .side-menu a img {
     width: 100%;   
     text-align: center;
     color: #ffffff;
-    background-color: #000000;
+    background-color: #101010;
 }
 .outro > h1 {
     margin: 0 auto;
@@ -498,9 +577,9 @@ footer > a {
     transition: 0.3s ease-in-out;
 }
 footer > a:hover {
-    color: #000000;
+    color: #101010;
     background: #ffffff;
-    border: 1px solid #000000;
+    border: 1px solid #101010;
 }
 footer > a img {
     width: 45px;
@@ -521,7 +600,7 @@ footer .footer-menu li {
     text-align: left;
 }
 footer .footer-menu li a {
-    color: #000000;
+    color: #101010;
 }
 
 footer .copyright {
@@ -551,7 +630,7 @@ footer .bottom {
     width: 100%;
     padding: 25px 0 60px 0;
     text-align: left;
-    border-top: 1px solid #000000;
+    border-top: 1px solid #101010;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -568,7 +647,7 @@ footer .bottom .sns {
 }
 footer .bottom a {
     font-size: 20px;
-    color: #000000;
+    color: #101010;
     display: flex;
     align-items: center;
 }
@@ -578,7 +657,7 @@ footer .bottom > a > img {
     transform: rotate(-90deg);
     margin-left: 10px;
     border-radius: 50px;
-    background-color: #000000;
+    background-color: #101010;
 }
 
 /* back to top 스크립트 써야함!!!!!!!! */
