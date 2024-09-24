@@ -229,13 +229,19 @@ header .side-menu a img {
     padding-top: 230px;
     background-color: #101010;
     text-align: center;
+
+    position: relative;
+    overflow: hidden;
 }
 .intro h2 {
     width: 60%;
     margin: auto;
     font-family: 'MBK CorpoA', serif;
     font-size: 90px;
-    color: #ffffff;
+    color: transparent;
+
+    transform: translateY(50px);
+    transition: 0.5s ease-in-out, 0.5s ease-in-out;
 }
 .intro video {
     width: 40%;
@@ -251,28 +257,43 @@ header .side-menu a img {
 
     position: relative;
 }
-.recommen .menu {
-    margin-top: 22px;
-    display: flex;
-    flex-direction: column;
 
+/* menu */
+.recommen .menu {
+    width: 100%;
     position: absolute;
-    top: 0;
+    top: 120px;
+    left: 80px;
 }
 .recommen .menu a {
     padding: 10px 0 5px 15px;
     border-left: 1px solid #555555;
     color: #555555;
+
+    display: block;
+    transition: 0.2s ease-in-out;
 }
-.recommen .menu a:first-of-type {
-    border-left: 1px solid #ffffff;
+.recommen .menu a.active {
+    font-weight: bold;
     color: #ffffff;
+    border-left: 1px solid #ffffff;
 }
 
 /* recommen list */
 .recommen .list {
     padding-left: 200px;
 }
+
+.charging-section {
+    transform: translateY(20px); /* 아래쪽으로 이동 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 부드러운 전환 */
+}
+
+.charging-section.visible {
+    opacity: 1; /* 보이게 설정 */
+    transform: translateY(0); /* 원래 위치로 이동 */
+}
+
 .recommen .list .recommen1,
 .recommen .list .recommen2,
 .recommen .list .recommen3,
@@ -286,7 +307,7 @@ header .side-menu a img {
 .recommen .list .recommen3 .txt,
 .recommen .list .recommen4 .txt {
     width: 580px;
-    padding-top: 250px;
+    padding-top: 220px;
 }
 .recommen .list .recommen1 .txt h2,
 .recommen .list .recommen2 .txt h2,
@@ -307,12 +328,12 @@ header .side-menu a img {
 /* 3번째 버튼만 */
 .recommen .list .recommen3 .txt a {
     width: 230px;
-    margin-top: 70px;
+    margin-top: 50px;
     padding: 8px 10px 8px 20px;
     color: #ffffff;
     background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(108, 108, 108, 0.7));
     border-radius: 70px;
-    border: 1px solid #B3B2B3;
+    border: 2px solid rgba(108, 108, 108, 0.7);
 
     display: flex;
     align-items: center;
@@ -324,12 +345,12 @@ header .side-menu a img {
 .recommen .list .recommen2 .txt a,
 .recommen .list .recommen4 .txt a {
     width: 170px;
-    margin-top: 70px;
+    margin-top: 50px;
     padding: 8px 10px 8px 20px;
     color: #ffffff;
     background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(108, 108, 108, 0.7));
     border-radius: 70px;
-    border: 1px solid #B3B2B3;
+    border: 2px solid rgba(108, 108, 108, 0.7);
 
     display: flex;
     align-items: center;
@@ -341,8 +362,8 @@ header .side-menu a img {
 .recommen .list .recommen3 .txt a:hover,
 .recommen .list .recommen4 .txt a:hover {
     color: #ffffff;
-    background: #006CD0;
-    border: 1px solid #006CD0;
+    background: rgba(108, 108, 108, 0.7);
+    border: 2px solid rgba(108, 108, 108, 0.1);
 }
 .recommen .list .recommen1 .txt a > img,
 .recommen .list .recommen2 .txt a > img,
