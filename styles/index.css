@@ -9,6 +9,7 @@
     font-size: 16px;
     box-sizing: border-box;
 }
+
 body {
     position: relative;
 }
@@ -18,12 +19,14 @@ body {
     width: 100%;
     position: relative;
 }
+
 .chat a {
     position: fixed;
     top: 800px;
     right: 80px;
     z-index: 9999;
 }
+
 .chat a img {
     width: 60px;
     padding: 15px;
@@ -31,6 +34,7 @@ body {
     border-radius: 50px;
     transition: 0.2s ease-in-out;
 }
+
 .chat a img:hover {
     background-color: #006CD0;
 }
@@ -49,10 +53,12 @@ header {
     z-index: 99999;
     transition: 0.5s ease-in-out;
 }
+
 header:hover {
     background-color: rgba(0, 0, 0, 0.7);
     color: #ffffff;
 }
+
 header .logo img {
     width: 45px;
 }
@@ -64,14 +70,17 @@ header nav .main-menu {
     display: flex;
     justify-content: space-between;
 }
+
 header nav .main-menu li {
     width: 280px;
     position: relative;
 }
+
 header nav .main-menu li a {
     color: #ffffff;
     padding-left: 30px;
 }
+
 header nav .main-menu li a span:hover {
     border-bottom: 1px solid #ffffff;
 }
@@ -86,9 +95,11 @@ header nav .sub-menu {
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 9999;
 }
+
 header nav .sub-menu li {
     line-height: 3.5;
 }
+
 header nav .sub-menu li a {
     width: 100%;
     color: #ffffff;
@@ -97,6 +108,7 @@ header nav .sub-menu li a {
 
     display: block;
 }
+
 header nav .sub-menu li:hover a {
     border-bottom: 1px solid #B3B2B3;
     background-color: rgba(255, 255, 255, 0.1);
@@ -119,12 +131,15 @@ header .side-menu {
     margin-left: auto;
     align-items: center;
 }
+
 header .side-menu a {
     color: #ffffff;
 }
+
 header .side-menu a:first-of-type:hover {
     border-bottom: 1px solid #ffffff;
 }
+
 header .side-menu a img {
     width: 24px;
 }
@@ -138,28 +153,33 @@ header .side-menu a img {
     padding: 0 80px 0 80px;
     position: relative;
 }
+
 .main .title {
     position: absolute;
     top: 500px;
     z-index: 9999;
 }
+
 .main .title h1 {
     font-family: 'MBK CorpoA', serif;
     font-size: 170px;
     color: #ffffff;
 }
+
 .main .title h2 {
     margin-top: 10px;
     font-size: 20px;
     font-family: 'MBKCorpoSLight', sans-serif;
     color: #ffffff;
 }
+
 /* button */
 .main .title .title-btn {
     margin-top: 20px;
     display: flex;
     align-items: center;
 }
+
 .main .title .title-btn .btn1 {
     padding: 10px 20px;
     border-radius: 50px;
@@ -169,19 +189,23 @@ header .side-menu a img {
     align-items: center;
     transition: 0.2s ease-in-out;
 }
+
 .main .title .title-btn .btn1:hover {
     background-color: #ffffff;
     border: 1px solid #ffffff;
     color: #101010;
 }
+
 .main .title .title-btn .btn1 svg {
     margin-left: 5px;
     fill: #ffffff;
     transition: 0.2s ease-in-out;
 }
+
 .main .title .title-btn .btn1:hover svg {
     fill: #101010;
 }
+
 .main .title .title-btn .btn2 {
     padding: 10px 20px;
     margin-left: 15px;
@@ -190,15 +214,18 @@ header .side-menu a img {
     color: #ffffff;
     transition: 0.2s ease-in-out;
 }
+
 .main .title .title-btn .btn2:hover {
     background-color: #ffffff;
     color: #101010;
 }
+
 .main .title p {
     margin-top: 50px;
     font-size: 14px;
     color: #ffffff;
 }
+
 .main video {
     position: absolute;
     top: 50%;
@@ -233,6 +260,7 @@ header .side-menu a img {
     position: relative;
     overflow: hidden;
 }
+
 .intro h2 {
     width: 60%;
     margin: auto;
@@ -243,6 +271,7 @@ header .side-menu a img {
     transform: translateY(50px);
     transition: 0.5s ease-in-out, 0.5s ease-in-out;
 }
+
 .intro video {
     width: 40%;
     padding-top: 55px;
@@ -255,6 +284,7 @@ header .side-menu a img {
     padding-left: 80px;
     background-color: #101010;
 
+    display: flex;
     position: relative;
 }
 
@@ -265,6 +295,7 @@ header .side-menu a img {
     top: 120px;
     left: 80px;
 }
+
 .recommen .menu a {
     padding: 10px 0 5px 15px;
     border-left: 1px solid #555555;
@@ -273,6 +304,7 @@ header .side-menu a img {
     display: block;
     transition: 0.2s ease-in-out;
 }
+
 .recommen .menu a.active {
     font-weight: bold;
     color: #ffffff;
@@ -285,13 +317,19 @@ header .side-menu a img {
 }
 
 .charging-section {
-    transform: translateY(20px); /* 아래쪽으로 이동 */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* 부드러운 전환 */
+    opacity: 0;
+    /* 초기 상태에서 숨김 */
+    transition: opacity 0.5s ease;
+    /* 부드러운 전환 */
+    position: absolute;
+    /* 고정된 위치 */
+    width: 100%;
+    /* 전체 너비 사용 */
 }
 
 .charging-section.visible {
-    opacity: 1; /* 보이게 설정 */
-    transform: translateY(0); /* 원래 위치로 이동 */
+    opacity: 1;
+    /* 보이게 설정 */
 }
 
 .recommen .list .recommen1,
@@ -302,13 +340,19 @@ header .side-menu a img {
     margin-bottom: 70px;
     display: flex;
 }
+
+/* txt */
+/* txt 고정 + 효과 */
 .recommen .list .recommen1 .txt,
 .recommen .list .recommen2 .txt,
 .recommen .list .recommen3 .txt,
 .recommen .list .recommen4 .txt {
     width: 580px;
     padding-top: 220px;
+
+    transition: opacity 0.5s ease-in-out;
 }
+
 .recommen .list .recommen1 .txt h2,
 .recommen .list .recommen2 .txt h2,
 .recommen .list .recommen3 .txt h2,
@@ -317,6 +361,7 @@ header .side-menu a img {
     line-height: 1.4;
     color: #ffffff;
 }
+
 .recommen .list .recommen1 .txt p,
 .recommen .list .recommen2 .txt p,
 .recommen .list .recommen3 .txt p,
@@ -357,6 +402,7 @@ header .side-menu a img {
     justify-content: space-between;
     transition: 0.3s ease-in-out;
 }
+
 .recommen .list .recommen1 .txt a:hover,
 .recommen .list .recommen2 .txt a:hover,
 .recommen .list .recommen3 .txt a:hover,
@@ -365,22 +411,26 @@ header .side-menu a img {
     background: rgba(108, 108, 108, 0.7);
     border: 2px solid rgba(108, 108, 108, 0.1);
 }
-.recommen .list .recommen1 .txt a > img,
-.recommen .list .recommen2 .txt a > img,
-.recommen .list .recommen3 .txt a > img,
-.recommen .list .recommen4 .txt a > img {
+
+.recommen .list .recommen1 .txt a>img,
+.recommen .list .recommen2 .txt a>img,
+.recommen .list .recommen3 .txt a>img,
+.recommen .list .recommen4 .txt a>img {
     width: 45px;
     padding: 15px;
     background-color: #fff;
     border-radius: 30px;
 }
-.recommen .list .recommen1 > img,
-.recommen .list .recommen2 > img,
-.recommen .list .recommen3 > img,
-.recommen .list .recommen4 > img {
+
+.recommen .list .recommen1>img,
+.recommen .list .recommen2>img,
+.recommen .list .recommen3>img,
+.recommen .list .recommen4>img {
     height: 750px;
     margin-left: 80px;
 }
+
+
 
 
 /*** models ***/
@@ -391,12 +441,14 @@ header .side-menu a img {
     text-align: center;
     position: relative;
 }
+
 .models h1 {
     padding-top: 200px;
     font-family: 'MBKCorpoA', serif;
     font-size: 90px;
     letter-spacing: 2px;
 }
+
 .models .options .menu {
     width: 50px;
     padding-left: 80px;
@@ -406,6 +458,7 @@ header .side-menu a img {
     position: absolute;
     top: 50%;
 }
+
 .models .options .menu a img {
     margin: 0 0 20px 0;
 }
@@ -425,6 +478,7 @@ header .side-menu a img {
     display: flex;
     justify-content: space-between;
 }
+
 .models .spec h2 {
     font-size: 35px;
 }
@@ -432,6 +486,7 @@ header .side-menu a img {
 .models .link {
     padding-top: 100px;
 }
+
 .models .link a {
     font-size: 20px;
     color: #101010;
@@ -439,6 +494,7 @@ header .side-menu a img {
     align-items: center;
     justify-content: center;
 }
+
 .models .link a img {
     width: 30px;
     margin-left: 10px;
@@ -447,6 +503,7 @@ header .side-menu a img {
     border-radius: 50px;
     transition: 0.2s ease-in-out;
 }
+
 .models .link a img:hover {
     /* background-color: transparent;
     border: 1px solid #101010; */
@@ -456,17 +513,20 @@ header .side-menu a img {
 /*** service & acc ***/
 .service {
     width: 100%;
-    padding: 130px 80px 0 80px;
+    padding: 130px 80px;
 }
+
 .service .title {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
 }
+
 .service .title h2 {
     font-family: 'MBK CorpoA', serif;
     font-size: 60px;
 }
+
 .service .title a {
     padding-bottom: 10px;
     font-size: 20px;
@@ -474,39 +534,55 @@ header .side-menu a img {
     color: #101010;
     display: flex;
     align-items: center;
+    transition: 0.2s ease-in-out;
 }
+.service .title a:hover {
+    border-bottom: 1px solid #101010;
+}
+
 .service .title a img {
     margin-left: 10px;
     width: 15px;
 }
 
 /* service content-list */
-.service .content{
+.service .content {
     width: 100%;
     padding-top: 50px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
-/* list 1 */
-.service .content .inner1 > img {
-    width: 595px;
-}
+
 .service .content .inner1 p,
 .service .content .inner2 p,
-.service .content .inner3 p {
+.service .content .inner3 p,
+.service .content .inner4 p {
     padding-top: 25px;
 }
+
 .service .content .inner1 h3,
 .service .content .inner2 h3,
-.service .content .inner3 h3 {
-    width: 425px;
+.service .content .inner3 h3,
+.service .content .inner4 h3 {
     padding-top: 27px;
     font-size: 22px;
     line-height: 1.3;
 }
+.service .content .inner1 h3 {
+    width: 440px;
+}
+.service .content .inner3 h3 {
+    width: 380px;
+}
+.service .content .inner4 h3 {
+    width: 500px;
+}
+
 .service .content .inner1 a,
 .service .content .inner2 a,
-.service .content .inner3 a {
+.service .content .inner3 a,
+.service .content .inner4 a {
     width: 230px;
     margin-top: 30px;
     padding: 8px 10px 8px 20px;
@@ -520,24 +596,33 @@ header .side-menu a img {
     justify-content: space-between;
     transition: 0.3s ease-in-out;
 }
+
 .service .content .inner1 a:hover,
 .service .content .inner2 a:hover,
-.service .content .inner3 a:hover {
+.service .content .inner3 a:hover,
+.service .content .inner4 a:hover {
     color: #101010;
     background: #ffffff;
     border: 1px solid #101010;
 }
+
 .service .content .inner1 a img,
 .service .content .inner2 a img,
-.service .content .inner3 a img {
+.service .content .inner3 a img,
+.service .content .inner4 a img {
     width: 45px;
     padding: 15px;
     background-color: #fff;
-    border-radius: 30px;   
+    border-radius: 30px;
+
 }
 
+/* list 1 */
+.service .content .inner1 > img {
+    width: 595px;
+}
 /* list 2 */
-.service .content .inner2 > img {
+.service .content .inner2>img {
     width: 690px;
     height: 700px;
     object-fit: cover;
@@ -545,7 +630,7 @@ header .side-menu a img {
 }
 
 /* list 3 */
-.service .content .inner3 > img {
+.service .content .inner3>img {
     width: 400px;
     height: 515px;
     object-fit: cover;
@@ -555,17 +640,21 @@ header .side-menu a img {
 /* list 4 */
 .service .inner4 > img {
     width: 595px;
+    padding-top: 60px;
 }
+
+
 
 /*** outro ***/
 .outro {
     margin: 0 auto;
-    width: 100%;   
+    width: 100%;
     text-align: center;
     color: #ffffff;
     background-color: #101010;
 }
-.outro > h1 {
+
+.outro>h1 {
     margin: 0 auto;
     padding-top: 415px;
     width: 70%;
@@ -579,11 +668,13 @@ footer {
     width: 100%;
     text-align: center;
 }
+
 footer h1 {
     font-family: 'MBK CorpoA', serif;
     font-size: 90px;
 }
-footer > a {
+
+footer>a {
     width: 300px;
     margin: 30px auto;
     padding: 8px 10px 8px 20px;
@@ -597,12 +688,14 @@ footer > a {
     justify-content: space-between;
     transition: 0.3s ease-in-out;
 }
-footer > a:hover {
+
+footer>a:hover {
     color: #101010;
     background: #ffffff;
     border: 1px solid #101010;
 }
-footer > a img {
+
+footer>a img {
     width: 45px;
     padding: 15px;
     background-color: #fff;
@@ -620,8 +713,12 @@ footer .footer-menu li {
     line-height: 2.5;
     text-align: left;
 }
-footer .footer-menu li a {
+footer .footer-menu > li > a {
     color: #101010;
+}
+.footer-menu .sub-menu a {
+    font-family: 'MBKCorpoSLight', sans-serif;
+    color: #555555;
 }
 
 footer .copyright {
@@ -630,7 +727,7 @@ footer .copyright {
 }
 footer .copyright .links {
     width: 100%;
-    padding-top: 5px;
+    padding-top: 7px;
     display: flex;
     justify-content: space-between;
 }
@@ -642,7 +739,6 @@ footer .copyright .links a {
 footer .copyright .links a:last-of-type {
     border: none;
 }
-
 footer .copyright h5 {
     padding: 15px 0 25px 0;
 }
@@ -663,6 +759,8 @@ footer .bottom .txt p {
     font-size: 14px;
 }
 footer .bottom .sns {
+    margin-left: auto;
+    padding-right: 50px;
     display: flex;
     gap: 25px;
 }
@@ -672,7 +770,7 @@ footer .bottom a {
     display: flex;
     align-items: center;
 }
-footer .bottom > a > img {
+footer .bottom>a>img {
     width: 25px;
     padding: 5px;
     transform: rotate(-90deg);
@@ -680,5 +778,3 @@ footer .bottom > a > img {
     border-radius: 50px;
     background-color: #101010;
 }
-
-/* back to top 스크립트 써야함!!!!!!!! */
