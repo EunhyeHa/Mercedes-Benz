@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/*** recommendation ***/
+.recommen {
+    width: 100%;
+    height: 5000px;
+    padding-left: 80px;
+    background-color: #101010;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* menu */
+.recommen .menu {
+    width: 100%;
+    position: absolute;
+    top: 120px;
+    left: 80px;
+}
+
+.recommen .menu a {
+    padding: 10px 0 5px 15px;
+    border-left: 1px solid #555555;
+    color: #555555;
+
+    display: block;
+    transition: 0.2s ease-in-out;
+}
+
+.recommen .menu a.active {
+    font-weight: bold;
+    color: #ffffff;
+    border-left: 1px solid #ffffff;
+}
+
+/* recommen list */
+.recommen .list {
+    width: 100%;
+    height: 100vh;
+    padding-left: 200px;
+
+    position: relative;
+}
+.recommen .list > div {
+    width: 100%;
+    /* height: 100vh; */
+    position: static;
+    top: 0;
+    left: 240px;
+    
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+.recommen .list > div.visible {
+    transform: translateY(0);
+}
+
+/* menu */
+.charging-section {
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+}
+
+.charging-section.visible {
+    opacity: 1;
+    /* 보이게 설정 */
+}
+
+.recommen .list .recommen1,
+.recommen .list .recommen2,
+.recommen .list .recommen3,
+.recommen .list .recommen4 {
+    width: 100%;
+    margin-bottom: 70px;
+    display: flex;
+}
+
+/* txt */
+/* txt 고정 + 효과 */
+.recommen .list .recommen1 .txt,
+.recommen .list .recommen2 .txt,
+.recommen .list .recommen3 .txt,
+.recommen .list .recommen4 .txt {
+    width: 580px;
+    padding-top: 220px;
+
+    transition: opacity 0.5s ease-in-out;
+}
+
+.recommen .list .recommen1 .txt h2,
+.recommen .list .recommen2 .txt h2,
+.recommen .list .recommen3 .txt h2,
+.recommen .list .recommen4 .txt h2 {
+    font-size: 50px;
+    line-height: 1.4;
+    color: #ffffff;
+}
+
+.recommen .list .recommen1 .txt p,
+.recommen .list .recommen2 .txt p,
+.recommen .list .recommen3 .txt p,
+.recommen .list .recommen4 .txt p {
+    padding-top: 45px;
+    color: #B3B2B3;
+}
+
+/* 3번째 버튼만 */
+.recommen .list .recommen3 .txt a {
+    width: 230px;
+    margin-top: 50px;
+    padding: 8px 10px 8px 20px;
+    color: #ffffff;
+    background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(108, 108, 108, 0.7));
+    border-radius: 70px;
+    border: 2px solid rgba(108, 108, 108, 0.7);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease-in-out;
+}
+
+.recommen .list .recommen1 .txt a,
+.recommen .list .recommen2 .txt a,
+.recommen .list .recommen4 .txt a {
+    width: 170px;
+    margin-top: 50px;
+    padding: 8px 10px 8px 20px;
+    color: #ffffff;
+    background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(108, 108, 108, 0.7));
+    border-radius: 70px;
+    border: 2px solid rgba(108, 108, 108, 0.7);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease-in-out;
+}
+
+.recommen .list .recommen1 .txt a:hover,
+.recommen .list .recommen2 .txt a:hover,
+.recommen .list .recommen3 .txt a:hover,
+.recommen .list .recommen4 .txt a:hover {
+    color: #ffffff;
+    background: rgba(108, 108, 108, 0.7);
+    border: 2px solid rgba(108, 108, 108, 0.1);
+}
+
+.recommen .list .recommen1 .txt a>img,
+.recommen .list .recommen2 .txt a>img,
+.recommen .list .recommen3 .txt a>img,
+.recommen .list .recommen4 .txt a>img {
+    width: 45px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+.recommen .list .recommen1>img,
+.recommen .list .recommen2>img,
+.recommen .list .recommen3>img,
+.recommen .list .recommen4>img {
+    height: 750px;
+    margin-left: 80px;
+}

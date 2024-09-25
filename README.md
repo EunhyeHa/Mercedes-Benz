@@ -1,4 +1,8 @@
 ## 240923 월 ##
+- 웹 script 50%까지 완료
+- models에 쓰일 이미지 서치..
+
+## 240923 월 ##
 - 웹/앱 html, css 작업 완료
 - 이미지 서치 및 소스 정리 완료
 - button에 공통 적용
@@ -17,6 +21,3 @@
 - figma로 디자인 작업
 - 소스
 https://www.youtube.com/watch?v=H7fjEv3E6Bk
-
-
-# Mercedes-Benz
