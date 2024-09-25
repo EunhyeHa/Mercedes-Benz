@@ -4,20 +4,21 @@
 .recommen {
     width: 100%;
     height: 5000px;
-    padding-left: 80px;
+    padding: 0 80px;
     background-color: #101010;
 
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     position: relative;
 }
 
 /* menu */
 .recommen .menu {
-    width: 100%;
+    width: 30%;
     position: absolute;
-    top: 120px;
-    left: 80px;
+    top: 100px; 
+    left: 80px; 
+    z-index: 1000; 
 }
 
 .recommen .menu a {
@@ -28,88 +29,63 @@
     display: block;
     transition: 0.2s ease-in-out;
 }
-
 .recommen .menu a.active {
     font-weight: bold;
     color: #ffffff;
     border-left: 1px solid #ffffff;
 }
 
-/* recommen list */
-.recommen .list {
-    width: 100%;
-    height: 100vh;
-    padding-left: 200px;
-
-    position: relative;
-}
-.recommen .list > div {
-    width: 100%;
-    /* height: 100vh; */
-    position: static;
-    top: 0;
-    left: 240px;
-    
-    transform: translateY(100%);
-    transition: transform 0.5s ease;
-}
-.recommen .list > div.visible {
-    transform: translateY(0);
-}
-
 /* menu */
 .charging-section {
     width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    position: absolute;
+    height: 100vh;
+    color: #555555;
+    position: relative;
 }
-
 .charging-section.visible {
-    opacity: 1;
-    /* 보이게 설정 */
-}
-
-.recommen .list .recommen1,
-.recommen .list .recommen2,
-.recommen .list .recommen3,
-.recommen .list .recommen4 {
-    width: 100%;
-    margin-bottom: 70px;
-    display: flex;
+    opacity: 1; /* 보이기 */
+    transform: translateY(0); /* 원래 위치로 이동 */
 }
 
 /* txt */
+.recommen .txt {
+    padding-left: 250px;
+    position: relative;
+}
 /* txt 고정 + 효과 */
-.recommen .list .recommen1 .txt,
-.recommen .list .recommen2 .txt,
-.recommen .list .recommen3 .txt,
-.recommen .list .recommen4 .txt {
+.recommen .txt .recommen1,
+.recommen .txt .recommen2,
+.recommen .txt .recommen3,
+.recommen .txt .recommen4 {
     width: 580px;
-    padding-top: 220px;
+    margin-top: 220px;
+    margin-bottom: 70px;
 
-    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 0; 
+    left: 250px; 
+    transition: transform 0.5s ease-in-out;
 }
 
-.recommen .list .recommen1 .txt h2,
-.recommen .list .recommen2 .txt h2,
-.recommen .list .recommen3 .txt h2,
-.recommen .list .recommen4 .txt h2 {
+.recommen .txt .recommen1 h2,
+.recommen .txt .recommen2 h2,
+.recommen .txt .recommen3 h2,
+.recommen .txt .recommen4 h2 {
     font-size: 50px;
     line-height: 1.4;
     color: #ffffff;
 }
 
-.recommen .list .recommen1 .txt p,
-.recommen .list .recommen2 .txt p,
-.recommen .list .recommen3 .txt p,
-.recommen .list .recommen4 .txt p {
+.recommen .txt .recommen1 p,
+.recommen .txt .recommen2 p,
+.recommen .txt .recommen3 p,
+.recommen .txt .recommen4 p {
     padding-top: 45px;
     color: #B3B2B3;
 }
 
 /* 3번째 버튼만 */
-.recommen .list .recommen3 .txt a {
+.recommen .txt .recommen3 a {
     width: 230px;
     margin-top: 50px;
     padding: 8px 10px 8px 20px;
@@ -124,9 +100,9 @@
     transition: 0.3s ease-in-out;
 }
 
-.recommen .list .recommen1 .txt a,
-.recommen .list .recommen2 .txt a,
-.recommen .list .recommen4 .txt a {
+.recommen .txt .recommen1 a,
+.recommen .txt .recommen2 a,
+.recommen .txt .recommen4 a {
     width: 170px;
     margin-top: 50px;
     padding: 8px 10px 8px 20px;
@@ -141,29 +117,34 @@
     transition: 0.3s ease-in-out;
 }
 
-.recommen .list .recommen1 .txt a:hover,
-.recommen .list .recommen2 .txt a:hover,
-.recommen .list .recommen3 .txt a:hover,
-.recommen .list .recommen4 .txt a:hover {
+.recommen .txt .recommen1 a:hover,
+.recommen .txt .recommen2 a:hover,
+.recommen .txt .recommen3 a:hover,
+.recommen .txt .recommen4 a:hover {
     color: #ffffff;
     background: rgba(108, 108, 108, 0.7);
     border: 2px solid rgba(108, 108, 108, 0.1);
 }
 
-.recommen .list .recommen1 .txt a>img,
-.recommen .list .recommen2 .txt a>img,
-.recommen .list .recommen3 .txt a>img,
-.recommen .list .recommen4 .txt a>img {
+.recommen .txt .recommen1 a>img,
+.recommen .txt .recommen2 a>img,
+.recommen .txt .recommen3 a>img,
+.recommen .txt .recommen4 a>img {
     width: 45px;
     padding: 15px;
     background-color: #fff;
     border-radius: 30px;
 }
 
-.recommen .list .recommen1>img,
-.recommen .list .recommen2>img,
-.recommen .list .recommen3>img,
-.recommen .list .recommen4>img {
+
+/* 이미지 */
+.recommen .images img,
+.recommen .images img,
+.recommen .images img,
+.recommen .images img {
     height: 750px;
-    margin-left: 80px;
+    /* margin-left: 80px; */
+    margin-bottom: 700px;
+
+    display: flex;
 }

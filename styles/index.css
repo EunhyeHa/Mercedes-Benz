@@ -10,7 +10,9 @@
     box-sizing: border-box;
 }
 
+
 body {
+    width: 100%;
     position: relative;
 }
 
@@ -278,64 +280,120 @@ header .side-menu a img {
 }
 
 
-/* 리코 다시 복붙!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!리코 다시 복붙!!!!!!!!!!!!!!!!!!! */
 
 
 
 /*** models ***/
 .models {
     width: 100%;
-    height: 1500px;
-    background-color: #F9F1E8;
+    height: 1680px;
+    background: url(../assets/images/models/bg.jpg) no-repeat 50% 50% / cover;
     text-align: center;
     position: relative;
 }
 
+/* title */
 .models h1 {
     padding-top: 200px;
     font-family: 'MBKCorpoA', serif;
     font-size: 90px;
     letter-spacing: 2px;
+    color: transparent;
+
+    transform: translateY(50px);
+    transition: 0.5s ease-in-out, 0.5s ease-in-out;
 }
 
-.models .options .menu {
-    width: 50px;
-    padding-left: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* options */
+.models .options {
+    width: 100%;;
+    text-align: left;
     position: absolute;
-    top: 50%;
+    top: 45%;
+    left: 80px;
+}
+/* list */
+.models .options .list a {
+    line-height: 2.5;
+    color: #101010;
+}
+.models .options .list a span {
+    font-family: 'MBKCorpoA', serif;
+    letter-spacing: 0.5px;
+
+    display: none;
+    transition: 0.3s ease-in-out;
+}
+.models .options .list.active a span {
+    display: inline;
+} 
+.models .options .list a svg {
+    margin-right: 10px;
+    fill: #B3B2B3;
+    transition: transform 0.3s ease;
+}
+.models .options .list.active a svg {
+    fill: #101010;
+    animation: bounce 0.5s;
+}
+@keyframes bounce {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0); 
+    }
 }
 
-.models .options .menu a img {
-    margin: 0 0 20px 0;
+/* content */
+.models .content {
+    width: 100%;
+    margin: 80px;
 }
-
-/* 이미지 교체 예정 */
-.models .options .images {
-    margin: auto;
-    background-color: #fff;
-    width: 800px;
-    height: 700px;
+.models .content img {
+    width: 70%;
+}
+.models .content p {
+    font-size: 14px;
+    color: #B3B2B3 ;
+    position: absolute;
+    bottom: 550px;
+    right: 80px;
 }
 
 /* spec */
 .models .spec {
     width: 100%;
-    padding: 120px 80px 0 80px;
+    padding: 20px 80px 0 80px;
+    text-align: left;
+    
     display: flex;
     justify-content: space-between;
 }
-
+.models .spec .inner {
+    width: 360px;
+}
 .models .spec h2 {
-    font-size: 35px;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+.models .spec p {
+    line-height: 1.5;
+    color: #555555;
 }
 
+
+
+
+
+/* link */
 .models .link {
-    padding-top: 100px;
+    padding: 100px;
 }
-
 .models .link a {
     font-size: 20px;
     color: #101010;
@@ -343,7 +401,6 @@ header .side-menu a img {
     align-items: center;
     justify-content: center;
 }
-
 .models .link a img {
     width: 30px;
     margin-left: 10px;
@@ -352,11 +409,14 @@ header .side-menu a img {
     border-radius: 50px;
     transition: 0.2s ease-in-out;
 }
-
 .models .link a img:hover {
     /* background-color: transparent;
     border: 1px solid #101010; */
 }
+
+
+
+
 
 
 /*** service & acc ***/

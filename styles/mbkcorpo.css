@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* serif */
 @font-face {
     font-family: 'MBK CorpoA';
     src: local('MBK CorpoA'),url(../assets/fonts/MBKCorpoA.woff) format('woff');
@@ -14,6 +15,7 @@
     font-weight: 100;
     font-display: swap;
 }
+/* san-serif */
 @font-face {
     font-family: 'MBKCorpoS';
     src: local('MBKCorpoS'),url(../assets/fonts/MBKCorpoS.woff) format('woff');
