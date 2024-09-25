@@ -1,4 +1,14 @@
-## 240923 월 ##
+## 240925 수 ##
+- recommendation 제외 완성
+- models
+  1) tab 작동 완료
+  2) models에 쓸 이미지 소스 서치, 편집
+  3) 전반적인 플랜 변경
+- outro 완성
+  1) MBUX 관련 자료: https://www.mercedes-benz.com/en/innovation/future-mobility/eqs-with-unique-mbux-hyperscreen/
+
+
+## 240924 화 ##
 - 웹 script 50%까지 완료
 - models에 쓰일 이미지 서치..
 

@@ -287,7 +287,7 @@ header .side-menu a img {
 /*** models ***/
 .models {
     width: 100%;
-    height: 1680px;
+    height: 1700px;
     background: url(../assets/images/models/bg.jpg) no-repeat 50% 50% / cover;
     text-align: center;
     position: relative;
@@ -307,7 +307,7 @@ header .side-menu a img {
 
 /* options */
 .models .options {
-    width: 100%;;
+    width: 300px;
     text-align: left;
     position: absolute;
     top: 45%;
@@ -356,12 +356,17 @@ header .side-menu a img {
 }
 .models .content img {
     width: 70%;
+    display: none;
+    margin: 0 auto;
+}
+.models .content img.active {
+    display: block;
 }
 .models .content p {
     font-size: 14px;
     color: #B3B2B3 ;
     position: absolute;
-    bottom: 550px;
+    bottom: 600px;
     right: 80px;
 }
 
@@ -373,6 +378,9 @@ header .side-menu a img {
     
     display: flex;
     justify-content: space-between;
+
+    position: absolute;
+    top: 1250px;
 }
 .models .spec .inner {
     width: 360px;
@@ -386,20 +394,18 @@ header .side-menu a img {
     color: #555555;
 }
 
-
-
-
-
 /* link */
-.models .link {
-    padding: 100px;
-}
 .models .link a {
     font-size: 20px;
     color: #101010;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: absolute;
+    left: 50%;
+    bottom: 130px;
+    transform: translate(-50%, -50%);
 }
 .models .link a img {
     width: 30px;
@@ -409,14 +415,9 @@ header .side-menu a img {
     border-radius: 50px;
     transition: 0.2s ease-in-out;
 }
-.models .link a img:hover {
-    /* background-color: transparent;
-    border: 1px solid #101010; */
+.models .link a:hover img {
+    background-color: #006CD0;
 }
-
-
-
-
 
 
 /*** service & acc ***/
@@ -430,12 +431,10 @@ header .side-menu a img {
     align-items: flex-end;
     justify-content: space-between;
 }
-
 .service .title h2 {
     font-family: 'MBK CorpoA', serif;
     font-size: 60px;
 }
-
 .service .title a {
     padding-bottom: 10px;
     font-size: 20px;
@@ -448,7 +447,6 @@ header .side-menu a img {
 .service .title a:hover {
     border-bottom: 1px solid #101010;
 }
-
 .service .title a img {
     margin-left: 10px;
     width: 15px;
@@ -458,6 +456,7 @@ header .side-menu a img {
 .service .content {
     width: 100%;
     padding-top: 50px;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -523,7 +522,6 @@ header .side-menu a img {
     padding: 15px;
     background-color: #fff;
     border-radius: 30px;
-
 }
 
 /* list 1 */
@@ -534,22 +532,26 @@ header .side-menu a img {
 .service .content .inner2>img {
     width: 690px;
     height: 700px;
-    object-fit: cover;
     object-position: 84%;
 }
-
 /* list 3 */
 .service .content .inner3>img {
     width: 400px;
     height: 515px;
-    object-fit: cover;
     object-position: 84%;
 }
-
 /* list 4 */
 .service .inner4 > img {
     width: 595px;
     padding-top: 60px;
+}
+
+/* hover */
+.service .content > div > img {
+    /* width: 100%; */
+    object-fit: cover;
+    overflow: hidden;
+    /* transition: 0.5s ease-in-out; */
 }
 
 
@@ -563,13 +565,56 @@ header .side-menu a img {
     background-color: #101010;
 }
 
-.outro>h1 {
+.outro > h1 {
     margin: 0 auto;
-    padding-top: 415px;
+    padding: 415px 0;
     width: 70%;
     font-family: 'MBK CorpoA', serif;
+    font-size: 90px;
+}
+
+/* 1 번째 */
+.outro .inner1 {
+    width: 100%;
+    position: relative;
+}
+.outro .inner1 img {
+    width: 100%;
+    height: 1080px;
+    object-fit: cover;
+}
+.outro .inner1 .txt {
+    width: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.outro .inner1 .txt h1 {
+    font-size: 120px;
+    letter-spacing: 2px;
+}
+.outro .inner1 .txt p {
+    width: 93%;
+    padding-top: 40px;
+    font-family: 'MBKCorpoSLight', sans-serif;
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+/* 2 번째 */
+.outro .inner2 h1 {
+    padding: 415px 0;
+    font-family: 'MBK CorpoACon', serif;
     font-size: 120px;
 }
+.outro .inner2 > img {
+    width: 100%;
+    height: 1080px;
+    object-fit: cover;
+}
+
 
 /*** footer ***/
 footer {

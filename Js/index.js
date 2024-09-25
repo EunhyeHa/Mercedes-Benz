@@ -105,11 +105,23 @@ $(window).scroll(function () {
 
 // list tab
 let tabMenu = $('.models li');
+let images = $('.models .content img');
 
 tabMenu.click(function(e){
     e.preventDefault();
     tabMenu.removeClass('active');
     $(this).addClass('active');
+
+    // 현재 클릭한 항목의 텍스트에 따라 이미지 변경
+    let selectedModel = $(this).find('span').text().toLowerCase(); // 선택된 모델 이름
+    images.removeClass('active');
+
+    // 선택된 모델에 해당하는 이미지 보이기
+    images.each(function() {
+        if ($(this).attr('alt') === selectedModel) {
+            $(this).addClass('active');
+        }
+    });
 });
 
 
