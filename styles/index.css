@@ -423,7 +423,7 @@ header .side-menu a img {
 /*** service & acc ***/
 .service {
     width: 100%;
-    padding: 130px 80px;
+    padding: 150px 80px;
 }
 
 .service .title {
@@ -560,17 +560,32 @@ header .side-menu a img {
 .outro {
     margin: 0 auto;
     width: 100%;
+    height: 6000px;
     text-align: center;
     color: #ffffff;
-    background-color: #101010;
+    /* background-color: #101010; */
+
+    position: relative;
+    overflow: hidden; 
+}
+.outro .inner1,
+.outro .inner2,
+.outro .inner3 {
+    /* position: absolute; */
+    /* margin-bottom: 700px; */
+
+
+    width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.3s ease-in-out, 0.3s ease-in-out;
 }
 
-.outro > h1 {
-    margin: 0 auto;
-    padding: 415px 0;
-    width: 70%;
-    font-family: 'MBK CorpoA', serif;
-    font-size: 90px;
+.outro .inner1.active,
+.outro .inner2.active,
+.outro .inner3.active {
+    opacity: 1; 
+    transform: translateY(0);
 }
 
 /* 1 번째 */
@@ -580,7 +595,7 @@ header .side-menu a img {
 }
 .outro .inner1 img {
     width: 100%;
-    height: 1080px;
+    height: 1200px;
     object-fit: cover;
 }
 .outro .inner1 .txt {
@@ -604,15 +619,36 @@ header .side-menu a img {
 }
 
 /* 2 번째 */
+.outro .inner2 {
+    width: 100%;
+    background-color: #101010;
+}
 .outro .inner2 h1 {
-    padding: 415px 0;
+    width: 100%;
     font-family: 'MBK CorpoACon', serif;
     font-size: 120px;
+
+    position: absolute;
+    top: 40%;
 }
 .outro .inner2 > img {
     width: 100%;
-    height: 1080px;
+    height: 1100px;
     object-fit: cover;
+}
+
+/* 3 번째 */
+.outro .inner3 {
+    width: 100%;
+    height: 1400px;
+    background-color: #101010;
+}
+.outro .inner3 > h1 {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 400px;
+    font-family: 'MBK CorpoA', serif;
+    font-size: 120px;
 }
 
 

@@ -125,6 +125,45 @@ tabMenu.click(function(e){
 });
 
 
+// outro
+gsap.registerPlugin(ScrollTrigger);
+
+// .inner 섹션 전체 애니메이션
+gsap.utils.toArray('.outro > div').forEach((section, index) => {
+  gsap.fromTo(section, 
+    { opacity: 0, y: 100 }, // 초기 상태: 투명, 아래에서 시작
+    { 
+      opacity: 1, y: 0, // 최종 상태: 불투명, 원래 위치
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: section,
+        start: "-70%",
+        end: "50%",
+        scrub: true,
+        markers: true,
+      }
+    });
+
+  // inner1, inner2, inner3 안의 모든 h1, p 애니메이션
+  gsap.fromTo(section.querySelectorAll('h1, p'), 
+    { opacity: 0.5, y: 120 }, // 아래에서 시작
+    { 
+      opacity: 1, y: 0,
+      duration: 3, // 3초로 애니메이션을 더 느리게 설정
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: section,
+        start: "-40%",
+        end: "50%",
+        scrub: true,
+        markers: true,
+      }
+    });
+});
+
+
+
+
 
 
 

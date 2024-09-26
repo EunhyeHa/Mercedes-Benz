@@ -1,3 +1,8 @@
+## 240926 목 ##
+- outro 이벤트 구현 완료
+- recommendation 구현 성공!!
+- 디자인/css 등 디테일 수정
+
 ## 240925 수 ##
 - recommendation 제외 완성
 - models
