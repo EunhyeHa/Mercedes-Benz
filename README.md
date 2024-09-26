@@ -5,8 +5,10 @@
   2) models에 쓸 이미지 소스 서치, 편집
   3) 전반적인 플랜 변경
 - outro 완성
-  1) MBUX 관련 자료: https://www.mercedes-benz.com/en/innovation/future-mobility/eqs-with-unique-mbux-hyperscreen/
+  1) MBUX 관련 자료
+  https://www.mercedes-benz.com/en/innovation/future-mobility/eqs-with-unique-mbux-hyperscreen/
 
+https://www.mercedes-benz.co.kr/passengercars/technology/innovations-by-mercedes-benz.html#contact
 
 ## 240924 화 ##
 - 웹 script 50%까지 완료
