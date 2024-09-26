@@ -565,27 +565,51 @@ header .side-menu a img {
     color: #ffffff;
     /* background-color: #101010; */
 
-    position: relative;
+    /* position: relative; */
     overflow: hidden; 
 }
+.outro div {
+    position: relative;
+    width: 100%;
+    /* opacity: 0; */
+}
+
 .outro .inner1,
 .outro .inner2,
 .outro .inner3 {
-    /* position: absolute; */
+    /* position: relative; */
     /* margin-bottom: 700px; */
 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
 
-    width: 100%;
+    /* width: 100%;
     opacity: 0;
     transform: translateY(50px);
-    transition: 0.3s ease-in-out, 0.3s ease-in-out;
+    transition: 0.3s ease-in-out, 0.3s ease-in-out; */
+}
+.outro .inner1 {
+    background: url('../assets/images/outro/outro_1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.outro .inner2 {
+    background: url('../assets/images/outro/outro_2.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.outro .inner3 {
+    background-color: #101010;
 }
 
 .outro .inner1.active,
 .outro .inner2.active,
 .outro .inner3.active {
-    opacity: 1; 
-    transform: translateY(0);
+    /* opacity: 1; 
+    transform: translateY(0); */
 }
 
 /* 1 번째 */

@@ -128,38 +128,50 @@ tabMenu.click(function(e){
 // outro
 gsap.registerPlugin(ScrollTrigger);
 
-// .inner 섹션 전체 애니메이션
-gsap.utils.toArray('.outro > div').forEach((section, index) => {
-  gsap.fromTo(section, 
-    { opacity: 0, y: 100 }, // 초기 상태: 투명, 아래에서 시작
-    { 
-      opacity: 1, y: 0, // 최종 상태: 불투명, 원래 위치
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: section,
-        start: "-70%",
-        end: "50%",
+// 전체 아우트로 섹션 고정
+gsap.to('.outro', {
+    scrollTrigger: {
+        trigger: '.outro',
+        start: "top top",  // 아우트로 섹션이 스크롤의 맨 위에 닿을 때
+        end: "bottom top",  // 아우트로 섹션이 스크롤의 맨 아래에 닿을 때
+        pin: true,          // 아우트로 섹션 고정
         scrub: true,
-        markers: true,
-      }
-    });
+    }
+});
 
-  // inner1, inner2, inner3 안의 모든 h1, p 애니메이션
-  gsap.fromTo(section.querySelectorAll('h1, p'), 
-    { opacity: 0.5, y: 120 }, // 아래에서 시작
-    { 
-      opacity: 1, y: 0,
-      duration: 3, // 3초로 애니메이션을 더 느리게 설정
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: section,
-        start: "-40%",
-        end: "50%",
-        scrub: true,
-        markers: true,
-      }
+// 패럴랙스 효과 적용
+gsap.utils.toArray('.outro div').forEach((section, index) => {
+    gsap.fromTo(section, 
+        { opacity: 0, y: 100 },  // 초기 상태
+        { 
+            opacity: 1, y: 0,     // 나타나는 효과
+            scrollTrigger: {
+                trigger: section,
+                start: "top center",
+                end: "bottom center",
+                scrub: true,  // 스크롤에 따라 애니메이션이 부드럽게 진행
+                markers: true, // 디버깅용 마커
+                toggleActions: "play none none reverse" // 애니메이션을 한 번만 실행하도록 설정
+            }
+        });
+});
+
+// 배경의 패럴랙스 효과
+gsap.utils.toArray('.outro div').forEach((section, index) => {
+    gsap.to(section, {
+        yPercent: -20,  // 배경이 천천히 위로 이동
+        ease: "none",
+        scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+        }
     });
 });
+
+
+
 
 
 
