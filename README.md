@@ -1,7 +1,11 @@
+## 240927 금 ##
+- outro, recommendation 구현 완성!!! 
+- 디테일 체크 / 수정
+
 ## 240926 목 ##
-- outro 이벤트 구현 완료
-- recommendation 구현 성공!!
-- 디자인/css 등 디테일 수정
+- outro 이벤트 구현 완료(거의..)
+- parallax animation 배움
+- GSAP 세미 복습..
 
 ## 240925 수 ##
 - recommendation 제외 완성
