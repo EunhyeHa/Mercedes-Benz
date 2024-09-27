@@ -560,56 +560,45 @@ header .side-menu a img {
 .outro {
     margin: 0 auto;
     width: 100%;
-    height: 6000px;
+    height: 2500px;
     text-align: center;
     color: #ffffff;
-    /* background-color: #101010; */
 
-    /* position: relative; */
-    overflow: hidden; 
-}
-.outro div {
     position: relative;
+}
+.outro > div {
     width: 100%;
-    /* opacity: 0; */
+    height: 1000px;
+
+    position: absolute;
+    top: 0;
+    opacity: 0; 
+    /* transform: translateY(100px); */
+    transition: 0.5s ease-in-out;
 }
 
 .outro .inner1,
-.outro .inner2,
-.outro .inner3 {
-    /* position: relative; */
-    /* margin-bottom: 700px; */
-
-    height: 100vh;
+.outro .inner2 {
+    /* height: 1000px; */
     display: flex;
     justify-content: center;
     align-items: center;
     color: #ffffff;
-
-    /* width: 100%;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 0.3s ease-in-out, 0.3s ease-in-out; */
+    transition: opacity 0.5s ease-in-out;
 }
+
 .outro .inner1 {
-    background: url('../assets/images/outro/outro_1.jpg') no-repeat center center fixed;
+    background: url('../assets/images/outro/outro_1.jpg') no-repeat center center;
     background-size: cover;
+
+    z-index: 3;
 }
 
 .outro .inner2 {
-    background: url('../assets/images/outro/outro_2.jpg') no-repeat center center fixed;
+    background: url('../assets/images/outro/outro_2.jpg') no-repeat center center ;
     background-size: cover;
-}
 
-.outro .inner3 {
-    background-color: #101010;
-}
-
-.outro .inner1.active,
-.outro .inner2.active,
-.outro .inner3.active {
-    /* opacity: 1; 
-    transform: translateY(0); */
+    z-index: 2;
 }
 
 /* 1 번째 */
@@ -617,16 +606,12 @@ header .side-menu a img {
     width: 100%;
     position: relative;
 }
-.outro .inner1 img {
-    width: 100%;
-    height: 1200px;
-    object-fit: cover;
-}
 .outro .inner1 .txt {
     width: 50%;
 
     position: absolute;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 .outro .inner1 .txt h1 {
@@ -651,33 +636,43 @@ header .side-menu a img {
     font-family: 'MBK CorpoACon', serif;
     font-size: 120px;
 
-    position: absolute;
-    top: 40%;
-}
-.outro .inner2 > img {
-    width: 100%;
-    height: 1100px;
-    object-fit: cover;
+    /* position: absolute; */
+    top: 50%;
 }
 
-/* 3 번째 */
-.outro .inner3 {
+
+
+/*** last-txt ***/
+.last-txt {
     width: 100%;
-    height: 1400px;
     background-color: #101010;
+    color: #ffffff;
+    text-align: center;
 }
-.outro .inner3 > h1 {
+.last-txt > h1 {
     width: 50%;
     margin: 0 auto;
-    padding-top: 400px;
+    padding: 600px 0;
     font-family: 'MBK CorpoA', serif;
     font-size: 120px;
+
+    top: 35%;
+    /* transform: translateY(300px);
+    transition: 0.3s ease-in-out; */
 }
+.last-txt > h1.active {
+    /* transform: translateY(0); */
+}
+
+
+
+
+
 
 
 /*** footer ***/
 footer {
-    padding: 160px 80px 0 80px;
+    padding: 150px 80px 0 80px;
     width: 100%;
     text-align: center;
 }

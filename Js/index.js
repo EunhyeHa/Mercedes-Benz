@@ -125,54 +125,69 @@ tabMenu.click(function(e){
 });
 
 
+
+
+
+
+
 // outro
 gsap.registerPlugin(ScrollTrigger);
 
-// 전체 아우트로 섹션 고정
-gsap.to('.outro', {
+let outro = document.querySelector('.outro');
+gsap.to(outro, {
     scrollTrigger: {
-        trigger: '.outro',
-        start: "top top",  // 아우트로 섹션이 스크롤의 맨 위에 닿을 때
-        end: "bottom top",  // 아우트로 섹션이 스크롤의 맨 아래에 닿을 때
-        pin: true,          // 아우트로 섹션 고정
+        trigger: outro,
+        start: "top top",
+        end: "bottom top", // outro 섹션의 하단이 브라우저 최상단에 도달할 때 종료
+        pin: true, 
         scrub: true,
+        markers: false
     }
 });
 
-// 패럴랙스 효과 적용
-gsap.utils.toArray('.outro div').forEach((section, index) => {
-    gsap.fromTo(section, 
-        { opacity: 0, y: 100 },  // 초기 상태
-        { 
-            opacity: 1, y: 0,     // 나타나는 효과
-            scrollTrigger: {
-                trigger: section,
-                start: "top center",
-                end: "bottom center",
-                scrub: true,  // 스크롤에 따라 애니메이션이 부드럽게 진행
-                markers: true, // 디버깅용 마커
-                toggleActions: "play none none reverse" // 애니메이션을 한 번만 실행하도록 설정
-            }
-        });
+// 각 inner 요소에 대해 애니메이션 설정
+let sections = gsap.utils.toArray('.outro > div');
+
+// 초기 상태 설정
+sections.forEach((section) => {
+    gsap.set(section, { opacity: 0 }); // 모든 요소를 숨김
 });
 
-// 배경의 패럴랙스 효과
-gsap.utils.toArray('.outro div').forEach((section, index) => {
-    gsap.to(section, {
-        yPercent: -20,  // 배경이 천천히 위로 이동
-        ease: "none",
-        scrollTrigger: {
-            trigger: section,
-            start: "top top",
-            end: "bottom top",
-            scrub: true
-        }
-    });
+// 첫 번째 요소 애니메이션
+gsap.to(sections[0], {
+    opacity: 1,
+    scrollTrigger: {
+        trigger: sections[0],
+        start: "top bottom", // 첫 번째 요소가 브라우저 바닥에 도달할 때 시작
+        end: "bottom+=1200 bottom", // 첫 번째 요소가 완전히 사라지기 전에 더 오래 유지
+        scrub: true,
+        onEnter: () => {
+            gsap.to(sections[0], { opacity: 1 });
+        },
+        onLeave: () => {
+            gsap.to(sections[0], { opacity: 0 });
+        },
+        markers: true
+    }
 });
 
-
-
-
+// 두 번째 요소 애니메이션
+gsap.to(sections[1], {
+    opacity: 1,
+    scrollTrigger: {
+        trigger: sections[0],
+        start: "bottom+=1300 bottom", // 첫 번째 요소가 브라우저 바닥에 도달할 때 시작
+        end: "bottom bottom", // 두 번째 요소가 보일 때까지 더 많은 스크롤 필요
+        scrub: true,
+        onEnter: () => {
+            gsap.to(sections[1], { opacity: 1 });
+        },
+        onLeaveBack: () => {
+            gsap.to(sections[1], { opacity: 0 });
+        },
+        markers: true
+    }
+});
 
 
 
