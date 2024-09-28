@@ -190,9 +190,21 @@ gsap.to(sections[1], {
 });
 
 
+// outro last txt
+let outroText = $('.last-txt h1');
+let windowHeight = $(window).height();
 
+$(window).scroll(function () {
+    let scrollTop = $(this).scrollTop();
+    let elementOffset = outroText.offset().top;
+    let distance = (elementOffset - scrollTop) - windowHeight / 2;
 
-
+    let opacity = Math.min(Math.max(1 - distance / 400, 0), 1);
+    outroText.css({
+        'color': `rgba(255, 255, 255, ${opacity})`,
+        'transform': `translateY(${120 - opacity * 120}px)`
+    });
+});
 
 
 // footer

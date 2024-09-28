@@ -1,5 +1,10 @@
+## 240928 토 ##
+- 버튼/스타일 등 디테일 체크 및 수정
+- favicon, open graph 설정
+- mo 버전 완성
+
 ## 240927 금 ##
-- outro, recommendation 구현 완성!!! 
+- outro, recommendation 구현 완성!!!
 - 디테일 체크 / 수정
 
 ## 240926 목 ##
