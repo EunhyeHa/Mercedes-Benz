@@ -30,7 +30,7 @@ $(window).scroll(function () {
     let opacity = Math.min(scrollTop / 800, 1);
     introText.css({
         'color': `rgba(255, 255, 255, ${opacity})`,
-        'transform': `translateY(${50 - opacity * 50}px)`
+        'transform': `translateY(${60 - opacity * 60}px)`
     });
 });
 
