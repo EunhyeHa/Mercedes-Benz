@@ -421,6 +421,7 @@ header .side-menu a img {
     padding: 150px 80px;
 }
 
+/* title */
 .service .title {
     display: flex;
     align-items: flex-end;
@@ -463,7 +464,6 @@ header .side-menu a img {
 .service .content .inner4 p {
     padding-top: 25px;
 }
-
 .service .content .inner1 h3,
 .service .content .inner2 h3,
 .service .content .inner3 h3,
@@ -499,7 +499,6 @@ header .side-menu a img {
     justify-content: space-between;
     transition: 0.3s ease-in-out;
 }
-
 .service .content .inner1 a:hover,
 .service .content .inner2 a:hover,
 .service .content .inner3 a:hover,
@@ -508,31 +507,41 @@ header .side-menu a img {
     background: #ffffff;
     border: 1px solid #101010;
 }
-
 .service .content .inner1 a img,
 .service .content .inner2 a img,
 .service .content .inner3 a img,
 .service .content .inner4 a img {
     width: 45px;
-    padding: 15px;
+    padding: 12px;
     background-color: #fff;
     border-radius: 30px;
 }
 
 /* hover */
+.service .content > div,
+.service .content > div,
+.service .content > div,
 .service .content > div {
     height: 100%;
+
     position: relative;
     overflow: hidden;
 }
-.service .content > div > img {
-    width: 100%;
-    height: auto;
+.service .content > div img 
+.service .content > div img 
+.service .content > div img 
+.service .content > div img {
+    overflow: hidden;
     object-fit: cover;
-    transition: 0.5s ease-in-out;
+
+    transition: 0.5s ease-in-out, 0.5s ease-in-out;
 }
-.service .content > div > img:hover {
-    transform: scale(1.1);
+.service .content > div img:hover,
+.service .content > div img:hover,
+.service .content > div img:hover,
+.service .content > div img:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
 }
 
 /* list 1 */
@@ -540,15 +549,19 @@ header .side-menu a img {
     width: 595px;
 }
 /* list 2 */
-.service .content .inner2>img {
+.service .content .inner2 > img {
     width: 690px;
     height: 700px;
+    object-fit: cover;
+
     object-position: 84%;
 }
 /* list 3 */
-.service .content .inner3>img {
+.service .content .inner3 > img {
     width: 400px;
     height: 515px;
+    object-fit: cover;
+
     object-position: 84%;
 }
 /* list 4 */
