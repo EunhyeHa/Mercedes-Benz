@@ -22,7 +22,7 @@
   1) MBUX 관련 자료
   https://www.mercedes-benz.com/en/innovation/future-mobility/eqs-with-unique-mbux-hyperscreen/
 
-https://www.mercedes-benz.co.kr/passengercars/technology/innovations-by-mercedes-benz.html#contact
+  2) https://www.mercedes-benz.co.kr/passengercars/technology/innovations-by-mercedes-benz.html#contact
 
 ## 240924 화 ##
 - 웹 script 50%까지 완료
