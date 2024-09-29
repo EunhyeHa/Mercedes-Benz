@@ -35,43 +35,84 @@ $(window).scroll(function () {
 });
 
 
+
+
+
+
+
+// recommendation 
 // recommen list
-$(document).ready(function () {
-    let recomenuLinks = $('.menu a');
-    let recoSections = $('.charging-section');
-    let recomenu = $('.menu');
+$(document).ready(function() {
+    // 첫 번째 메뉴를 처음부터 활성화 상태로 설정
+    $('.menu a').removeClass('active'); // 모든 메뉴 비활성화
+    $('.menu a').first().addClass('active'); // 첫 번째 메뉴 활성화
 
-    // 메뉴 클릭 시 부드러운 스크롤
-    recomenuLinks.click(function (event) {
-        event.preventDefault();
-        let target = $(this).attr('href');
-        $('html, body').animate({
-            scrollTop: $(target).offset().top
-        }, 500);
-    });
+    $(window).scroll(function () {
+        let scrollTop = $(this).scrollTop();
+        let recommenSection = $('.recommen');
+        let recommenTop = recommenSection.offset().top;
+        let recommen4 = $('#recommen4');
+        let recommen4Top = recommen4.offset().top;
+        let menu = $('.menu');
 
-    // GSAP ScrollTrigger 설정
-    gsap.registerPlugin(ScrollTrigger);
+        // 메뉴는 항상 표시
+        menu.css('display', 'block');
 
-    recoSections.each(function (index) {
-        gsap.fromTo($(this), 
-            { 
-                y: 100, // 시작 위치
-                opacity: 0 // 시작 투명도
-            }, 
-            { 
-                y: 0, 
-                opacity: 1, 
-                scrollTrigger: {
-                    trigger: $(this),
-                    start: "top 80%", // 섹션의 상단이 뷰포트의 80% 지점에 도달할 때
-                    toggleActions: "play none none reverse", // 스크롤 시 애니메이션 재생 및 되감기
-                    markers: false // 디버그를 위해 마커를 추가할 수 있음
+        // 메뉴가 recommen 섹션에 도달했을 때 고정
+        if (scrollTop >= recommenTop && scrollTop < recommen4Top) {
+            menu.css({
+                'position': 'fixed',
+                'top': '120px'
+            });
+
+            // 현재 활성화된 메뉴 항목을 찾고, 해당 내용 표시
+            $('.charging-section').each(function() {
+                let sectionTop = $(this).offset().top;
+                let sectionHeight = $(this).outerHeight();
+
+                if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
+                    let id = $(this).attr('id');
+                    $('.menu a').removeClass('active');
+                    $('.menu a[href="#' + id + '"]').addClass('active');
+                    $(this).addClass('visible').siblings().removeClass('visible');
                 }
-            }
-        );
+            });
+        } 
+        // recommen4에 도달하면 메뉴 고정 해제
+        else if (scrollTop >= recommen4Top) {
+            menu.css({
+                'position': 'relative',
+                'top': 'auto'
+            });
+        }
     });
 });
+
+// list tab
+let tabMenu = $('.models li');
+let images = $('.models .content img');
+
+tabMenu.click(function(e){
+    e.preventDefault();
+    tabMenu.removeClass('active');
+    $(this).addClass('active');
+
+    // 현재 클릭한 항목의 텍스트에 따라 이미지 변경
+    let selectedModel = $(this).find('span').text().toLowerCase();
+    images.removeClass('active');
+
+    // 선택된 모델에 해당하는 이미지 보이기
+    images.each(function() {
+        if ($(this).attr('alt') === selectedModel) {
+            $(this).addClass('active');
+        }
+    });
+});
+
+
+
+
+
 
 
 
@@ -104,20 +145,20 @@ $(window).scroll(function () {
 });
 
 // list tab
-let tabMenu = $('.models li');
-let images = $('.models .content img');
+let modelstabMenu = $('.models li');
+let modelsimages = $('.models .content img');
 
-tabMenu.click(function(e){
+modelstabMenu.click(function(e){
     e.preventDefault();
-    tabMenu.removeClass('active');
+    modelstabMenu.removeClass('active');
     $(this).addClass('active');
 
     // 현재 클릭한 항목의 텍스트에 따라 이미지 변경
     let selectedModel = $(this).find('span').text().toLowerCase(); // 선택된 모델 이름
-    images.removeClass('active');
+    modelsimages.removeClass('active');
 
     // 선택된 모델에 해당하는 이미지 보이기
-    images.each(function() {
+    modelsimages.each(function() {
         if ($(this).attr('alt') === selectedModel) {
             $(this).addClass('active');
         }
