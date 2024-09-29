@@ -3,7 +3,6 @@
 /*** recommendation ***/
 .recommen {
     width: 100%;
-    /* height: 5000px; */
     padding: 0 80px;
     background-color: #101010;
 
@@ -18,7 +17,7 @@
     position: absolute;
     top: 100px; 
     left: 80px; 
-    z-index: 1000; 
+    z-index: 99;
 }
 
 .recommen .menu a {
@@ -37,8 +36,10 @@
 
 /* menu */
 .charging-section {
-    /* width: 100%; */
-    height: 100vh;
+    width: 100%;
+    height: 750px;
+    margin-bottom: 120px;
+
     color: #555555;
     position: relative;
     opacity: 0; 
@@ -47,28 +48,21 @@
 }
 .charging-section.visible {
     opacity: 1;
+   transform: translateY(0);
+}
+
+/* 첫 번째 텍스트와 이미지를 기본으로 항상 보이게 설정 */
+.recommen .charging-section:first-child,
+.recommen .images img:first-child {
+    opacity: 1; 
     transform: translateY(0);
 }
 
+
 /* txt */
 .recommen .txt {
-    padding: 250px 0 0 250px;
+    padding: 200px 0 0 250px;
     position: relative;
-    width: 50%;
-}
-/* txt 고정 + 효과 */
-.recommen .txt .recommen1,
-.recommen .txt .recommen2,
-.recommen .txt .recommen3,
-.recommen .txt .recommen4 {
-    width: 580px;
-    margin-top: 220px;
-    margin-bottom: 70px;
-
-    position: absolute;
-    top: 0; 
-    left: 250px; 
-    transition: 0.5s ease-in-out;
 }
 
 .recommen .txt h2,
@@ -89,48 +83,75 @@
 }
 
 /* 3번째 버튼만 */
-.recommen .txt .recommen3 a {
+.recommen .txt #recommen3 a {
     width: 230px;
     margin-top: 50px;
     padding: 8px 10px 8px 20px;
     color: #ffffff;
     background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(108, 108, 108, 0.7));
     border-radius: 70px;
-    border: 2px solid rgba(108, 108, 108, 0.7);
+    border: 1px solid rgba(108, 108, 108, 0.7);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: 0.3s ease-in-out;
 }
+.recommen .txt #recommen3 a img {
+    width: 45px;
+    padding: 12px;
+    background-color: #ffffff;
+    border-radius: 50px;
+}
+.recommen .txt #recommen3 a:hover {
+    color: #ffffff;
+    background: rgba(108, 108, 108, 0.7);
+    border: 1px solid rgba(108, 108, 108, 0.1);
+}
 
 /* 나머지 버튼 */
-.recommen .txt a {
-    width: 170px;
+.recommen .txt > div a {
+    width: 160px;
+    height: 63px;
     margin-top: 50px;
     padding: 8px 10px 8px 20px;
     color: #ffffff;
     background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(108, 108, 108, 0.7));
     border-radius: 70px;
-    border: 2px solid rgba(108, 108, 108, 0.7);
+    border: 1px solid rgba(108, 108, 108, 0.7);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: 0.3s ease-in-out;
 }
-
+.recommen .txt > div a img {
+    width: 45px;
+    padding: 12px;
+    background-color: #ffffff;
+    border-radius: 50px;
+}
 .recommen .txt a:hover {
     color: #ffffff;
     background: rgba(108, 108, 108, 0.7);
-    border: 2px solid rgba(108, 108, 108, 0.1);
+    border: 1px solid rgba(108, 108, 108, 0.1);
 }
 
 /* 이미지 */
 .recommen .images img {
-    width: 100%;
     height: 750px;
+    margin-left: 80px;
+    margin-bottom: 120px;
+
     object-fit: cover;
-    /* margin-bottom: 700px; */
     display: flex;
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transition-delay: 0.2s;
+}
+.recommen .images img.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

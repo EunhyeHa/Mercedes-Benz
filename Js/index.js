@@ -38,82 +38,69 @@ $(window).scroll(function () {
 
 
 
-
-
 // recommendation 
-// recommen list
 $(document).ready(function() {
     // 첫 번째 메뉴를 처음부터 활성화 상태로 설정
     $('.menu a').removeClass('active'); // 모든 메뉴 비활성화
     $('.menu a').first().addClass('active'); // 첫 번째 메뉴 활성화
 
+    let images = $('.images img'); // 이미지 요소
+
     $(window).scroll(function () {
         let scrollTop = $(this).scrollTop();
+        let windowHeight = $(window).height();
         let recommenSection = $('.recommen');
         let recommenTop = recommenSection.offset().top;
-        let recommen4 = $('#recommen4');
-        let recommen4Top = recommen4.offset().top;
+        let lastImage = $('.images img').last(); // 마지막 이미지
+        let lastImageTop = lastImage.offset().top;
         let menu = $('.menu');
 
         // 메뉴는 항상 표시
         menu.css('display', 'block');
 
         // 메뉴가 recommen 섹션에 도달했을 때 고정
-        if (scrollTop >= recommenTop && scrollTop < recommen4Top) {
+        if (scrollTop >= recommenTop && scrollTop < lastImageTop) {
             menu.css({
                 'position': 'fixed',
                 'top': '120px'
             });
 
-            // 현재 활성화된 메뉴 항목을 찾고, 해당 내용 표시
-            $('.charging-section').each(function() {
-                let sectionTop = $(this).offset().top;
-                let sectionHeight = $(this).outerHeight();
+            // 이미지와 텍스트가 동시에 나타나는 처리
+            images.each(function(index) {
+                let imgTop = $(this).offset().top;
+                let imgHeight = $(this).outerHeight();
 
-                if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
-                    let id = $(this).attr('id');
+                // 이미지와 텍스트 영역의 50%가 보일 때
+                if (scrollTop >= imgTop - windowHeight / 2 && scrollTop < imgTop + imgHeight - windowHeight / 2) {
+                    // 메뉴 활성화
                     $('.menu a').removeClass('active');
-                    $('.menu a[href="#' + id + '"]').addClass('active');
-                    $(this).addClass('visible').siblings().removeClass('visible');
+
+                    // recommen1의 메뉴는 항상 active 상태 유지
+                    if (index === 0) {
+                        $('.menu a').eq(0).addClass('active');
+                    } else {
+                        $('.menu a').eq(index).addClass('active');
+                    }
+
+                    // 텍스트 섹션 보이기
+                    $('.charging-section').removeClass('visible');
+                    $('#recommen' + (index + 1)).addClass('visible');
+
+                    // 이미지 보이기
+                    images.removeClass('visible');
+                    $(this).addClass('visible'); // 이미지에 visible 클래스 추가
                 }
             });
         } 
-        // recommen4에 도달하면 메뉴 고정 해제
-        else if (scrollTop >= recommen4Top) {
+        // 마지막 이미지가 최상단에 닿을 때 메뉴 고정 해제
+        else if (scrollTop >= lastImageTop) {
             menu.css({
-                'position': 'relative',
-                'top': 'auto'
+                'position': 'absolute',
+                'top': (lastImageTop - recommenTop) + 'px'
             });
         }
     });
 });
-
-// list tab
-let tabMenu = $('.models li');
-let images = $('.models .content img');
-
-tabMenu.click(function(e){
-    e.preventDefault();
-    tabMenu.removeClass('active');
-    $(this).addClass('active');
-
-    // 현재 클릭한 항목의 텍스트에 따라 이미지 변경
-    let selectedModel = $(this).find('span').text().toLowerCase();
-    images.removeClass('active');
-
-    // 선택된 모델에 해당하는 이미지 보이기
-    images.each(function() {
-        if ($(this).attr('alt') === selectedModel) {
-            $(this).addClass('active');
-        }
-    });
-});
-
-
-
-
-
-
 
 
 // models 
@@ -166,11 +153,6 @@ modelstabMenu.click(function(e){
 });
 
 
-
-
-
-
-
 // outro
 gsap.registerPlugin(ScrollTrigger);
 
@@ -208,7 +190,7 @@ gsap.to(sections[0], {
         onLeave: () => {
             gsap.to(sections[0], { opacity: 0 });
         },
-        markers: true
+        markers: false
     }
 });
 
@@ -226,7 +208,7 @@ gsap.to(sections[1], {
         onLeaveBack: () => {
             gsap.to(sections[1], { opacity: 0 });
         },
-        markers: true
+        markers: false
     }
 });
 

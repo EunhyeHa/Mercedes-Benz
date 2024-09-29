@@ -35,7 +35,6 @@ img {
     border-radius: 50px;
     transition: 0.3s ease-in-out;
 }
-
 .chat a img:hover {
     background-color: #006CD0;
 }
@@ -69,17 +68,14 @@ header nav .main-menu {
     display: flex;
     justify-content: space-between;
 }
-
 header nav .main-menu li {
     width: 250px;
     position: relative;
 }
-
 header nav .main-menu li a {
     color: #ffffff;
     padding-left: 30px;
 }
-
 header nav .main-menu li a span:hover {
     border-bottom: 1px solid #ffffff;
 }
@@ -89,7 +85,7 @@ header nav .sub-menu {
     width: 100%;
     display: none;
     position: absolute;
-    top: 330%;
+    top: 320%;
 
     background-color: #555555;
     z-index: 9999;
@@ -248,7 +244,7 @@ header .side-menu a img {
 /*** intro ***/
 .intro {
     width: 100%;
-    height: 1300px;
+    height: 1500px;
     padding-top: 270px;
     background-color: #101010;
     text-align: center;
@@ -268,7 +264,7 @@ header .side-menu a img {
 }
 .intro video {
     width: 40%;
-    padding-top: 55px;
+    padding: 60px 0 200px 0;
 }
 
 
