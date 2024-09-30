@@ -12,6 +12,7 @@
 body {
     width: 100%;
     position: relative;
+    overflow-x: hidden;
 }
 img {
     vertical-align: top;
@@ -527,10 +528,6 @@ header .side-menu a .menu {
     object-fit: cover;
     transition: 0.5s ease-in-out;
 }
-/* .service .content > div > img:hover {
-    transform: scale(1.05);
-    opacity: 0.8;
-} */
 
 /* list 1 */
 .service .content .inner1 > img {

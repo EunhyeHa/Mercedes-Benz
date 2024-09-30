@@ -6,6 +6,7 @@
     .chat a {
         position: fixed;
         right: 15px;
+        top: 750px;
     }
 
     /*** header ***/
@@ -391,6 +392,7 @@
     footer > a {
         width: 260px;
         height: 50px;
+        margin: 20px auto;
         font-size: 14px;
     }
     footer > a img {
@@ -401,7 +403,7 @@
     /* menu */
     footer .footer-menu {
         flex-direction: column;
-        padding: 0;
+        padding-top: 20px;
     }
     footer .footer-menu .main-menu {
         width: 100%;
@@ -411,11 +413,12 @@
         text-align: left;
 
         cursor: pointer;
-        border-bottom: 1px solid #B3B2B3;
     }
 
     .footer-menu .sub-menu {
         max-height: 0;
+        border-bottom: 1px solid #B3B2B3;
+
         overflow: hidden;
         transition: 0.5s ease-in-out;
     }
@@ -425,5 +428,47 @@
     
     .footer-menu .sub-menu.active {
         max-height: 500px;
+    }
+
+    /* copyright */
+    footer .copyright {
+        padding-top: 40px;
+        font-size: 14px;
+        line-height: 1.3;
+    }
+    footer .copyright .links {
+        width: 95%;
+        padding: 25px 0;
+        line-height: 2;
+
+        display: block;
+    }
+
+    /* bottom */
+    footer .bottom {
+        display: block;
+        padding-bottom: 0;
+    }
+    footer .bottom .txt p{
+        font-size: 12px;
+        line-height: 1;
+        padding-bottom: 5px;
+    }
+    footer .bottom .sns {
+        margin-left: 0;
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    /* back-to-top */
+    footer .bottom > a {
+        font-size: 16px;
+
+        position: absolute;
+        bottom: 80px;
+        right: 15px;
+    }
+    footer .bottom a img {
+        width: 25px;
     }
 }
