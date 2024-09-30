@@ -254,3 +254,11 @@ BTT.click(function (event) {
         scrollTop: 0
     }, 1000);
 });
+
+// mobile
+document.querySelectorAll('.main-menu').forEach(button => {
+    button.addEventListener('click', function() {
+        const subMenu = this.nextElementSibling; // 다음 요소인 서브 메뉴 선택
+        subMenu.classList.toggle('active'); // active 클래스 토글
+    });
+});

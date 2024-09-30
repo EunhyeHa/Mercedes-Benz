@@ -1,0 +1,429 @@
+@charset "utf-8";
+
+/***** 모바일 *****/
+@media screen and (max-width: 430px) {
+    /*** chat ***/
+    .chat a {
+        position: fixed;
+        right: 15px;
+    }
+
+    /*** header ***/
+    header {
+        width: 100%;
+        height: 80px;
+        padding: 0 15px;
+
+        background-color: rgba(85, 85, 85, 0.7);
+    }
+    header .logo img {
+        width: 35px;
+    }
+
+    /* nav */
+    /* main-menu */
+    header nav .main-menu {
+        display: none;
+    }
+
+    /* sub-menu */
+    header nav .sub-menu {
+        display: none;
+    }
+
+    /* side-menu */
+    header .side-menu a {
+        color: transparent;
+        position: relative;
+    }
+    header .side-menu a:nth-child(2),
+    header .side-menu a:nth-child(3),
+    header .side-menu a:nth-child(4) {
+        display: none;
+    }
+    header .side-menu a:nth-child(5) {
+        display: block;
+        z-index: 99999;
+    }
+
+    /*** main ***/
+    .main {
+        width: 100%;
+        height: 800px;
+        padding: 0 15px 0 15px;
+    }
+    .main .title {
+        position: absolute;
+        top: 400px;
+        z-index: 9999;
+    }
+    .main .title h1{
+        width: 300px;
+        font-size: 80px;
+    }
+    .main .title h2 {
+        margin-top: 25px;
+        font-size: 18px;
+    }
+
+    /* button */
+    .main .title .title-btn {
+        margin-top: 15px;
+    }
+    .main .title .title-btn .btn1 {
+        background-color: #ffffff;;
+        color: #101010;
+    }
+    .main .title .title-btn .btn1 svg {
+        fill: #101010;
+    }
+    .main .title .title-btn .btn2:hover {
+        background-color: #006CD0;
+        color: #ffffff;
+    }
+    .main .title p {
+        width: 300px;
+        margin-top: 50px;
+
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    /*** gradient ***/
+    .gradient {
+        position: absolute;
+        top: 600px;
+    }
+
+    /*** intro ***/
+    .intro {
+        padding: 100px 15px;
+    }
+    .intro h2 {
+        width: 100%;
+        font-size: 35px;
+    } 
+    .intro video {
+        width: 100%;
+    }
+
+    /*** recommendation ***/
+    .recommen {
+        width: 100%;
+        padding: 0 15px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .recommen .menu {
+        display: none;
+    }
+    .recommen .txt {
+        padding: 0;
+    }
+    .recommen .txt h2 {
+        font-size: 25px;
+    }
+    .recommen .txt p {
+        width: 80%;
+        padding-top: 15px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    /* 3번째 버튼 */
+    .recommen .txt > div a {
+        width: 180px;
+        margin-top: 30px;
+        height: 50px;
+        font-size: 14px;
+    }
+    .recommen .txt > div a img {
+        width: 35px;
+        padding: 8px;
+    }
+    /* 나머지 버튼 */
+    .recommen .txt > div a {
+        width: 140px;
+        margin-top: 30px;
+        height: 50px;
+        font-size: 14px;
+    }
+    .recommen .txt > div a img {
+        width: 35px;
+        padding: 8px;
+    }
+    
+    /* 이미지 */
+    .recommen .images img {
+        height: 400px;
+        margin: 0;
+        display: block;
+    }
+
+    /*** models ***/
+    .models {
+        width: 100%;
+        height: 1400px;
+        margin: 0 auto;
+    }
+
+    /* title */
+    .models h1 {
+        padding-top: 80px;
+        font-size: 50px;
+    }
+
+    /* options */
+    .models .options .list {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* list */
+    .models .options .list a {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: space-between;
+    }
+
+    /* content */
+    .models .content {
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    .models .content img {
+        width: 85%;
+        padding-top: 30px;
+    }
+    .models .content p {
+        position: absolute;
+        top: 420px;
+        right: 15px;
+        font-size: 12px;
+    }
+
+    /* spec */
+    .models .spec {
+        width: 100%;
+        padding: 0 15px;
+        text-align: center;
+
+        display: block;
+
+        top: 600px;
+    }
+    .models .spec h2 {
+        padding: 40px 0 10px 0;
+    }
+    .models .spec p {
+        line-height: 1.3;
+    }
+
+    /* links */
+    .models .link a {
+        font-size: 16px;
+
+        position: absolute;
+        bottom: 50px;
+    }
+    .models .link a img {
+        width: 25px;
+    }
+
+    /*** service & acc ***/
+    .service {
+        padding: 80px 15px;
+    }
+
+    /* title */
+    .service .title h2 {
+        font-size: 35px;
+    }
+    .service .title a {
+        display: none;
+    }
+
+    /* content-list */
+    .service .content {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    .service .content::-webkit-scrollbar {
+        display: none;
+    }
+    .service .content > div {
+        margin-right: 20px;
+    }
+    .service .content .inner1, 
+    .service .content .inner4 {
+        min-width: 300px;
+    }
+    .service .content .inner2 {
+        min-width: 360px;
+    }
+    .service .content .inner3 {
+        min-width: 230px;
+    }
+
+    .service .content .inner1 p,
+    .service .content .inner2 p,
+    .service .content .inner3 p,
+    .service .content .inner4 p {
+        padding-top: 15px;
+        font-size: 12px;
+    }
+    .service .content .inner1 h3,
+    .service .content .inner2 h3,
+    .service .content .inner3 h3,
+    .service .content .inner4 h3 {
+        width: 100%;
+        padding-top: 20px;
+        font-size: 16px;
+    }
+    .service .content .inner1 a,
+    .service .content .inner2 a,
+    .service .content .inner3 a,
+    .service .content .inner4 a {
+        width: 200px;
+        height: 50px;
+        font-size: 14px;
+    }
+    .service .content .inner1 a img,
+    .service .content .inner2 a img,
+    .service .content .inner3 a img,
+    .service .content .inner4 a img {
+        width: 35px;
+        padding: 8px;
+    }
+
+    /* list 1 */
+    .service .content .inner1 > img {
+        width: 300px;
+    }
+    /* list 2 */
+    .service .content .inner2 > img {
+        width: 360px;
+        height: 360px;
+        object-position: 84%;
+    }
+    /* list 3 */
+    .service .content .inner3 > img {
+        width: 230px;
+        height: 280px;
+        object-position: 84%;
+    }
+    /* list 4 */
+    .service .inner4 > img {
+        width: 300px;
+        padding-top: 0;
+    }
+
+    /*** outro ***/
+    .outro .inner1,
+    .outro .inner2 {
+        height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    /* 1 번쩨 */
+    .outro .inner1 {
+        width: 100%;
+        position: relative;
+    }
+    .outro .inner1 .txt {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+    }
+    .outro .inner1 .txt h1 {
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+    .outro .inner1 .txt p {
+        margin: 0 auto;
+        padding: 30px 15px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    /* 2 번째 */
+    .outro .inner2 h1 {
+        width: 50%;
+        font-size: 40px;
+        line-height: 1.3;
+        padding-bottom: 430px;
+    }
+
+    /*** last-txt ***/
+    .last-txt {
+        height: 1000px;
+    }
+    .last-txt > h1 {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px 100px 15px;
+        font-size: 50px;
+
+        transition: 0.5s ease-in-out, 0.5s ease-in-out;
+    }
+
+    /*** footer ***/
+    footer {
+        padding: 80px 15px;
+    }
+
+    /* title */
+    footer h1 {
+        font-size: 40px;
+    }
+    footer > a {
+        width: 260px;
+        height: 50px;
+        font-size: 14px;
+    }
+    footer > a img {
+        width: 35px;
+        padding: 8px;
+    }
+
+    /* menu */
+    footer .footer-menu {
+        flex-direction: column;
+        padding: 0;
+    }
+    footer .footer-menu .main-menu {
+        width: 100%;
+        padding: 15px 0;
+        background: none;
+        border: none;
+        text-align: left;
+
+        cursor: pointer;
+        border-bottom: 1px solid #B3B2B3;
+    }
+
+    .footer-menu .sub-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.5s ease-in-out;
+    }
+    .footer-menu .sub-menu a {
+        line-height: 2.8;
+    }
+    
+    .footer-menu .sub-menu.active {
+        max-height: 500px;
+    }
+}
