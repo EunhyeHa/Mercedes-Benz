@@ -3,6 +3,7 @@
 /*** recommendation ***/
 .recommen {
     width: 100%;
+    height: 3600px;
     padding: 0 80px;
     background-color: #101010;
 
@@ -38,7 +39,7 @@
 }
 
 /* menu */
-.charging-section {
+.wrapper .charging-section {
     width: 100%;
     height: 750px;
     margin-bottom: 120px;
@@ -49,33 +50,45 @@
     transform: translateY(50px); 
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.charging-section.visible {
+.wrapper .charging-section.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-
-
-/* txt */
-.recommen .txt {
-    padding: 200px 0 0 250px;
+/* wrapper */
+.recommen .wrapper #recommen1,
+.recommen .wrapper #recommen2,
+.recommen .wrapper #recommen3,
+.recommen .wrapper #recommen4 {
     position: relative;
+
+    display: flex;
 }
-.recommen .txt h2 {
+.recommen .wrapper #recommen1 .txt,
+.recommen .wrapper #recommen2 .txt,
+.recommen .wrapper #recommen3 .txt,
+.recommen .wrapper #recommen4 .txt {
+    padding: 200px 0 0 250px;
+
+}
+.recommen .wrapper #recommen1 h2,
+.recommen .wrapper #recommen2 h2,
+.recommen .wrapper #recommen3 h2,
+.recommen .wrapper #recommen4 h2 {
     font-size: 50px;
     line-height: 1.4;
     color: #ffffff;
 }
-.recommen .txt p,
-.recommen .txt p,
-.recommen .txt p,
-.recommen .txt p {
+.recommen .wrapper p,
+.recommen .wrapper p,
+.recommen .wrapper p,
+.recommen .wrapper p {
     padding-top: 45px;
     color: #B3B2B3;
 }
 
 /* 3번째 버튼만 */
-.recommen .txt #recommen3 a {
+.recommen .wrapper #recommen3 a {
     width: 230px;
     margin-top: 50px;
     padding: 8px 10px 8px 20px;
@@ -89,20 +102,20 @@
     justify-content: space-between;
     transition: 0.3s ease-in-out;
 }
-.recommen .txt #recommen3 a img {
+.recommen .wrapper #recommen3 a img {
     width: 45px;
     padding: 12px;
     background-color: #ffffff;
     border-radius: 50px;
 }
-.recommen .txt #recommen3 a:hover {
+.recommen .wrapper #recommen3 a:hover {
     color: #ffffff;
     background: rgba(108, 108, 108, 0.7);
     border: 1px solid rgba(108, 108, 108, 0.1);
 }
 
 /* 나머지 버튼 */
-.recommen .txt > div a {
+.recommen .wrapper > div a {
     width: 160px;
     height: 63px;
     margin-top: 50px;
@@ -117,20 +130,23 @@
     justify-content: space-between;
     transition: 0.3s ease-in-out;
 }
-.recommen .txt > div a img {
+.recommen .wrapper > div a img {
     width: 45px;
     padding: 12px;
     background-color: #ffffff;
     border-radius: 50px;
 }
-.recommen .txt a:hover {
+.recommen .wrapper a:hover {
     color: #ffffff;
     background: rgba(108, 108, 108, 0.7);
     border: 1px solid rgba(108, 108, 108, 0.1);
 }
 
 /* 이미지 */
-.recommen .images img {
+.recommen .wrapper #recommen1 .images img,
+.recommen .wrapper #recommen2 .images img,
+.recommen .wrapper #recommen3 .images img,
+.recommen .wrapper #recommen4 .images img {
     height: 750px;
     margin: 0 0 120px 80px;
     object-fit: cover;
@@ -141,7 +157,13 @@
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     transition-delay: 0.2s;
 }
-.recommen .images img.visible {
+.recommen .wrapper #recommen4 {
+    padding-bottom: 200px;
+}
+.recommen .wrapper #recommen1 .images img.visible,
+.recommen .wrapper #recommen2 .images img.visible,
+.recommen .wrapper #recommen3 .images img.visible,
+.recommen .wrapper #recommen4 .images img.visible {
     opacity: 1;
     transform: translateY(0);
 }

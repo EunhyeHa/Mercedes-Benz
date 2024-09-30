@@ -98,7 +98,8 @@
 
     /*** intro ***/
     .intro {
-        padding: 100px 15px;
+        padding: 150px 15px;
+        height: 700px;
     }
     .intro h2 {
         width: 100%;
@@ -106,27 +107,58 @@
     } 
     .intro video {
         width: 100%;
+        padding: 50px 0 0 0;
     }
+
+
+
 
     /*** recommendation ***/
     .recommen {
         width: 100%;
+        height: 3100px;
         padding: 0 15px;
 
         display: flex;
         flex-direction: column;
     }
-
     .recommen .menu {
         display: none;
     }
-    .recommen .txt {
+
+    .recommen .wrapper .charging-section {
+        margin: 0;
+        height: 750px;
+    }
+    .recommen .wrapper .charging-section:nth-child(4) {
+        height: 0;
+    }
+
+    .recommen .wrapper #recommen1,
+    .recommen .wrapper #recommen2,
+    .recommen .wrapper #recommen3,
+    .recommen .wrapper #recommen4 {
+        display: block;
+        /* padding: 0; */
+    }
+    .recommen .wrapper #recommen1 .txt,
+    .recommen .wrapper #recommen2 .txt,
+    .recommen .wrapper #recommen3 .txt,
+    .recommen .wrapper #recommen4 .txt {
         padding: 0;
     }
-    .recommen .txt h2 {
+    .recommen .wrapper #recommen1 .txt h2,
+    .recommen .wrapper #recommen2 .txt h2,
+    .recommen .wrapper #recommen3 .txt h2,
+    .recommen .wrapper #recommen4 .txt h2 {
+        width: 90%;
+        padding-top: 40px;
         font-size: 25px;
     }
-    .recommen .txt p {
+    .recommen .wrapper #recommen1 .txt p,
+    .recommen .wrapper #recommen2 .txt p,
+    .recommen .wrapper #recommen3 .txt p,
+    .recommen .wrapper #recommen4 .txt p {
         width: 80%;
         padding-top: 15px;
         font-size: 14px;
@@ -134,34 +166,49 @@
     }
     
     /* 3번째 버튼 */
-    .recommen .txt > div a {
-        width: 180px;
+    .recommen .wrapper #recommen3 .txt > a {
+        width: 200px;
         margin-top: 30px;
         height: 50px;
         font-size: 14px;
     }
-    .recommen .txt > div a img {
+    .recommen .wrapper #recommen3 .txt a img {
         width: 35px;
         padding: 8px;
     }
     /* 나머지 버튼 */
-    .recommen .txt > div a {
+    .recommen .wrapper #recommen1 .txt > a,
+    .recommen .wrapper #recommen2 .txt > a,
+    .recommen .wrapper #recommen4 .txt > a {
         width: 140px;
-        margin-top: 30px;
         height: 50px;
+        margin-top: 30px;
         font-size: 14px;
     }
-    .recommen .txt > div a img {
+    .recommen .wrapper #recommen1 .txt > a img,
+    .recommen .wrapper #recommen2 .txt > a img,
+    .recommen .wrapper #recommen4 .txt > a img {
         width: 35px;
         padding: 8px;
     }
     
     /* 이미지 */
-    .recommen .images img {
+    .recommen .wrapper #recommen1 .images {
+        padding: 0;
+
+        position: relative;
+    }
+    .recommen .wrapper #recommen1 .images img,
+    .recommen .wrapper #recommen2 .images img,
+    .recommen .wrapper #recommen3 .images img,
+    .recommen .wrapper #recommen4 .images img {
+        width: 400px;
         height: 400px;
         margin: 0;
-        display: block;
+        transform: translateY(0);
+        /* display: block; */
     }
+
 
     /*** models ***/
     .models {

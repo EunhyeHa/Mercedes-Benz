@@ -37,8 +37,17 @@ $(window).scroll(function () {
 
 
 
-// recommendation 
+// recommendation
 $(document).ready(function() {
+    // 화면 너비가 430px 이하일 경우 동작 중지
+    if ($(window).width() <= 430) {
+        // 430px 이하일 때 기본적인 스타일 설정
+        $('.menu').css('display', 'none');  // 메뉴는 숨기기
+        $('.charging-section').css('opacity', '1');  // 텍스트는 보이도록
+        $('.images img').css('opacity', '1');  // 이미지도 보이도록
+        return; // 함수 종료
+    }
+
     // 첫 번째 메뉴를 처음부터 활성화 상태로 설정
     $('.menu a').removeClass('active'); // 모든 메뉴 비활성화
     $('.menu a').first().addClass('active'); // 첫 번째 메뉴 활성화
@@ -114,6 +123,7 @@ $(document).ready(function() {
         }
     });
 });
+
 
 
 
