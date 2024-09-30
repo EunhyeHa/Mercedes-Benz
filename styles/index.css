@@ -640,12 +640,10 @@ opacity: 0.8;
     padding-bottom: 100px;
 }
 
-
-
 /*** last-txt ***/
 .last-txt {
     width: 100%;
-    height: 1500px;
+    height: 1300px;
     background-color: #101010;
     text-align: center;
 
@@ -665,10 +663,6 @@ opacity: 0.8;
 }
 
 
-
-
-
-
 /*** footer ***/
 footer {
     padding: 150px 80px 0 80px;
@@ -676,11 +670,11 @@ footer {
     text-align: center;
 }
 
+/* title */
 footer h1 {
     font-family: 'MBK CorpoA', serif;
     font-size: 90px;
 }
-
 footer>a {
     width: 300px;
     margin: 30px auto;
@@ -695,16 +689,14 @@ footer>a {
     justify-content: space-between;
     transition: 0.3s ease-in-out;
 }
-
 footer>a:hover {
     color: #101010;
     background: #ffffff;
     border: 1px solid #101010;
 }
-
-footer>a img {
+footer > a img {
     width: 45px;
-    padding: 15px;
+    padding: 12px;
     background-color: #fff;
     border-radius: 30px;
 }

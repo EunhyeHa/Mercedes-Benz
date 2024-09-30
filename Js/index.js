@@ -37,7 +37,6 @@ $(window).scroll(function () {
 
 
 
-
 // recommendation 
 $(document).ready(function() {
     // 첫 번째 메뉴를 처음부터 활성화 상태로 설정
@@ -45,20 +44,40 @@ $(document).ready(function() {
     $('.menu a').first().addClass('active'); // 첫 번째 메뉴 활성화
 
     let images = $('.images img'); // 이미지 요소
+    let firstImage = images.first(); // 첫 번째 이미지
+    let chargingSections = $('.charging-section'); // 텍스트 섹션
+    let firstTxt = $('#recommen1'); // 첫 번째 텍스트 섹션
+    let menu = $('.menu');
+    let recommenSection = $('.recommen');
+    let recommenTop = recommenSection.offset().top;
+    let recommenBottom = recommenTop + recommenSection.outerHeight(); // recommen 섹션의 끝 지점
+
+    // 메뉴 처음엔 숨김
+    menu.css('opacity', '0');
 
     $(window).scroll(function () {
         let scrollTop = $(this).scrollTop();
         let windowHeight = $(window).height();
-        let recommenSection = $('.recommen');
-        let recommenTop = recommenSection.offset().top;
         let lastImage = $('.images img').last(); // 마지막 이미지
         let lastImageTop = lastImage.offset().top;
-        let menu = $('.menu');
 
-        // 메뉴는 항상 표시
-        menu.css('display', 'block');
+        // recommen 섹션이 브라우저에서 보이기 시작할 때 메뉴가 서서히 나타남
+        if (scrollTop >= recommenTop - windowHeight && scrollTop < recommenBottom) {
+            let opacityValue = Math.min(1, (scrollTop - (recommenTop - windowHeight)) / windowHeight); // 서서히 나타나는 효과
+            menu.css('opacity', opacityValue);
 
-        // 메뉴가 recommen 섹션에 도달했을 때 고정
+            // 첫 번째 텍스트와 이미지에 서서히 나타나고 사라지는 애니메이션 적용
+            firstTxt.css('opacity', opacityValue);
+            firstImage.css('opacity', opacityValue);
+
+        } else {
+            // recommen 섹션을 벗어나면 메뉴, 첫 번째 텍스트, 이미지 서서히 사라짐
+            menu.css('opacity', '0');
+            firstTxt.css('opacity', '0');
+            firstImage.css('opacity', '0');
+        }
+
+        // recommen 섹션 내에서만 메뉴 고정
         if (scrollTop >= recommenTop && scrollTop < lastImageTop) {
             menu.css({
                 'position': 'fixed',
@@ -74,13 +93,7 @@ $(document).ready(function() {
                 if (scrollTop >= imgTop - windowHeight / 2 && scrollTop < imgTop + imgHeight - windowHeight / 2) {
                     // 메뉴 활성화
                     $('.menu a').removeClass('active');
-
-                    // recommen1의 메뉴는 항상 active 상태 유지
-                    if (index === 0) {
-                        $('.menu a').eq(0).addClass('active');
-                    } else {
-                        $('.menu a').eq(index).addClass('active');
-                    }
+                    $('.menu a').eq(index).addClass('active');
 
                     // 텍스트 섹션 보이기
                     $('.charging-section').removeClass('visible');
@@ -93,14 +106,15 @@ $(document).ready(function() {
             });
         } 
         // 마지막 이미지가 최상단에 닿을 때 메뉴 고정 해제
-        else if (scrollTop >= lastImageTop) {
+        else if (scrollTop >= lastImageTop || scrollTop < recommenTop) {
             menu.css({
                 'position': 'absolute',
-                'top': (lastImageTop - recommenTop) + 'px'
+                'top': (scrollTop >= recommenTop ? (lastImageTop - recommenTop) + 'px' : 'initial')
             });
         }
     });
 });
+
 
 
 // models 
@@ -225,7 +239,7 @@ $(window).scroll(function () {
     let opacity = Math.min(Math.max(1 - distance / 400, 0), 1);
     outroText.css({
         'color': `rgba(255, 255, 255, ${opacity})`,
-        'transform': `translateY(${120 - opacity * 120}px)`
+        'transform': `translateY(${100 - opacity * 100}px)`
     });
 });
 

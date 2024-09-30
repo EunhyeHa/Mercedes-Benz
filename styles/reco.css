@@ -18,6 +18,9 @@
     top: 100px; 
     left: 80px; 
     z-index: 99;
+
+    opacity: 0;
+    transition: 0.5s ease-in-out;
 }
 
 .recommen .menu a {
@@ -48,15 +51,9 @@
 }
 .charging-section.visible {
     opacity: 1;
-   transform: translateY(0);
-}
-
-/* 첫 번째 텍스트와 이미지를 기본으로 항상 보이게 설정 */
-.recommen .charging-section:first-child,
-.recommen .images img:first-child {
-    opacity: 1; 
     transform: translateY(0);
 }
+
 
 
 /* txt */
@@ -64,7 +61,6 @@
     padding: 200px 0 0 250px;
     position: relative;
 }
-
 .recommen .txt h2,
 .recommen .txt h2,
 .recommen .txt h2,
@@ -73,7 +69,6 @@
     line-height: 1.4;
     color: #ffffff;
 }
-
 .recommen .txt p,
 .recommen .txt p,
 .recommen .txt p,
@@ -140,9 +135,7 @@
 /* 이미지 */
 .recommen .images img {
     height: 750px;
-    margin-left: 80px;
-    margin-bottom: 120px;
-
+    margin: 0 0 120px 80px;
     object-fit: cover;
     display: flex;
 
