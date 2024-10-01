@@ -712,6 +712,12 @@ footer .footer-menu li {
     line-height: 2.5;
     text-align: left;
 }
+footer .footer-menu .main-menu {
+    background: none;
+    border: none;
+
+    cursor: pointer;
+}
 footer .footer-menu > li > a {
     color: #101010;
 }

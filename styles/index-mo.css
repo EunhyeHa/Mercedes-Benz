@@ -155,13 +155,15 @@
     .recommen .wrapper #recommen2,
     .recommen .wrapper #recommen3,
     .recommen .wrapper #recommen4 {
-        display: block;
+        flex-direction: column;
     }
     .recommen .wrapper #recommen1 .txt,
     .recommen .wrapper #recommen2 .txt,
     .recommen .wrapper #recommen3 .txt,
     .recommen .wrapper #recommen4 .txt {
         padding: 0;
+
+        order: 2;
     }
     .recommen .wrapper #recommen1 .txt h2,
     .recommen .wrapper #recommen2 .txt h2,
@@ -222,7 +224,8 @@
         height: 400px;
         margin: 0;
         transform: translateY(0);
-        /* display: block; */
+
+        order: 1;
     }
 
 
@@ -242,44 +245,45 @@
     /* options */
     .models .options {
         width: 100%;
-        top: 32%;
+        padding: 0 30px;
 
+        top: 32%;
+        left: 0;
         display: flex;
     }
     .models .options .list {
+        margin: 0 auto;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: space-between;
+        align-items: flex-start;
         flex-direction: row;
-        gap: 20px;
     }
 
     /* list */
     .models .options .list a {
         display: flex;
         flex-direction: column;
-        /* justify-content: flex-start; */
-        align-items: center;
+        align-items: baseline;
+        justify-content: center;
 
         margin: 0 10px;
         line-height: 1.5;
         text-align: center;
     }
-
     .models .options .list a span {
-        display: block;
+        display: none;
         margin-top: 5px;
     }
-
-    /* Ensure icons remain visible at small screen sizes */
     .models .options .list a svg {
-        width: 40px;
+        width: 35px;
         height: auto;
-        margin-bottom: 5px;
+        margin: auto;
+    }
+    .models .options .list.active {
+        display: block;
     }
     .models .options .list.active a svg {
-        fill: #101010;
-        animation: bounce 0.5s;
+        animation: none;
     }
 
     /* content */
@@ -292,11 +296,7 @@
         padding-top: 30px;
     }
     .models .content p {
-        height: 0;
-        position: absolute;
-        top: 420px;
-        right: 15px;
-        font-size: 12px;
+        display: none;
     }
 
     /* spec */
@@ -306,12 +306,14 @@
         text-align: center;
 
         display: block;
-        top: 600px;
+        
+        top: 520px;
     }
     .models .spec h2 {
-        padding: 40px 0 10px 0;
+        padding: 20px 0 10px 0;
     }
     .models .spec p {
+        padding-bottom: 30px;
         line-height: 1.3;
     }
 
