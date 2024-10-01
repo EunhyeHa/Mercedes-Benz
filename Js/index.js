@@ -35,31 +35,27 @@ $(window).scroll(function () {
 });
 
 
-
-
 // recommendation
 $(document).ready(function() {
     // 화면 너비가 430px 이하일 경우 동작 중지
     if ($(window).width() <= 430) {
-        // 430px 이하일 때 기본적인 스타일 설정
-        $('.menu').css('display', 'none');  // 메뉴는 숨기기
-        $('.charging-section').css('opacity', '1');  // 텍스트는 보이도록
-        $('.images img').css('opacity', '1');  // 이미지도 보이도록
-        return; // 함수 종료
+        $('.menu').css('display', 'none');
+        $('.charging-section').css('opacity', '1');
+        $('.images img').css('opacity', '1');
+        return;
     }
 
-    // 첫 번째 메뉴를 처음부터 활성화 상태로 설정
-    $('.menu a').removeClass('active'); // 모든 메뉴 비활성화
-    $('.menu a').first().addClass('active'); // 첫 번째 메뉴 활성화
+    $('.menu a').removeClass('active'); 
+    $('.menu a').first().addClass('active');
 
-    let images = $('.images img'); // 이미지 요소
-    let firstImage = images.first(); // 첫 번째 이미지
-    let chargingSections = $('.charging-section'); // 텍스트 섹션
-    let firstTxt = $('#recommen1'); // 첫 번째 텍스트 섹션
+    let images = $('.images img');
+    let firstImage = images.first();
+    let chargingSections = $('.charging-section');
+    let firstTxt = $('#recommen1');
     let menu = $('.menu');
     let recommenSection = $('.recommen');
     let recommenTop = recommenSection.offset().top;
-    let recommenBottom = recommenTop + recommenSection.outerHeight(); // recommen 섹션의 끝 지점
+    let recommenBottom = recommenTop + recommenSection.outerHeight(); 
 
     // 메뉴 처음엔 숨김
     menu.css('opacity', '0');
@@ -67,7 +63,7 @@ $(document).ready(function() {
     $(window).scroll(function () {
         let scrollTop = $(this).scrollTop();
         let windowHeight = $(window).height();
-        let lastImage = $('.images img').last(); // 마지막 이미지
+        let lastImage = $('.images img').last();
         let lastImageTop = lastImage.offset().top;
 
         // recommen 섹션이 브라우저에서 보이기 시작할 때 메뉴가 서서히 나타남
@@ -100,15 +96,12 @@ $(document).ready(function() {
 
                 // 이미지와 텍스트 영역의 50%가 보일 때
                 if (scrollTop >= imgTop - windowHeight / 2 && scrollTop < imgTop + imgHeight - windowHeight / 2) {
-                    // 메뉴 활성화
                     $('.menu a').removeClass('active');
                     $('.menu a').eq(index).addClass('active');
 
-                    // 텍스트 섹션 보이기
                     $('.charging-section').removeClass('visible');
                     $('#recommen' + (index + 1)).addClass('visible');
 
-                    // 이미지 보이기
                     images.removeClass('visible');
                     $(this).addClass('visible'); // 이미지에 visible 클래스 추가
                 }
@@ -123,7 +116,6 @@ $(document).ready(function() {
         }
     });
 });
-
 
 
 
@@ -164,11 +156,9 @@ modelstabMenu.click(function(e){
     modelstabMenu.removeClass('active');
     $(this).addClass('active');
 
-    // 현재 클릭한 항목의 텍스트에 따라 이미지 변경
     let selectedModel = $(this).find('span').text().toLowerCase(); // 선택된 모델 이름
     modelsimages.removeClass('active');
 
-    // 선택된 모델에 해당하는 이미지 보이기
     modelsimages.each(function() {
         if ($(this).attr('alt') === selectedModel) {
             $(this).addClass('active');
@@ -185,7 +175,7 @@ gsap.to(outro, {
     scrollTrigger: {
         trigger: outro,
         start: "top top",
-        end: "bottom top", // outro 섹션의 하단이 브라우저 최상단에 도달할 때 종료
+        end: "bottom top",
         pin: true, 
         scrub: true,
         markers: false
@@ -205,8 +195,8 @@ gsap.to(sections[0], {
     opacity: 1,
     scrollTrigger: {
         trigger: sections[0],
-        start: "top bottom", // 첫 번째 요소가 브라우저 바닥에 도달할 때 시작
-        end: "bottom+=1200 bottom", // 첫 번째 요소가 완전히 사라지기 전에 더 오래 유지
+        start: "top bottom",
+        end: "bottom+=1200 bottom",
         scrub: true,
         onEnter: () => {
             gsap.to(sections[0], { opacity: 1 });
@@ -223,8 +213,8 @@ gsap.to(sections[1], {
     opacity: 1,
     scrollTrigger: {
         trigger: sections[0],
-        start: "bottom+=1300 bottom", // 첫 번째 요소가 브라우저 바닥에 도달할 때 시작
-        end: "bottom bottom", // 두 번째 요소가 보일 때까지 더 많은 스크롤 필요
+        start: "bottom+=1300 bottom",
+        end: "bottom bottom",
         scrub: true,
         onEnter: () => {
             gsap.to(sections[1], { opacity: 1 });
@@ -268,7 +258,7 @@ BTT.click(function (event) {
 // mobile
 document.querySelectorAll('.main-menu').forEach(button => {
     button.addEventListener('click', function() {
-        const subMenu = this.nextElementSibling; // 다음 요소인 서브 메뉴 선택
-        subMenu.classList.toggle('active'); // active 클래스 토글
+        const subMenu = this.nextElementSibling;
+        subMenu.classList.toggle('active');
     });
 });

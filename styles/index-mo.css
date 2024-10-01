@@ -213,6 +213,7 @@
     /* 이미지 */
     .recommen .wrapper #recommen1 .images {
         padding: 0;
+        overflow-y: hidden;
 
         position: relative;
     }
@@ -301,18 +302,24 @@
 
     /* spec */
     .models .spec {
-        width: 100%;
-        padding: 0 15px;
+        width: 430px;
+        padding: 0 30px;
         text-align: center;
 
-        display: block;
+        flex-direction: column;
         
-        top: 520px;
+        top: 550px;
+    }
+    .models .spec .inner {
+        width: 100%;
+
     }
     .models .spec h2 {
+        width: 100%;
         padding: 20px 0 10px 0;
     }
     .models .spec p {
+        width: 100%;
         padding-bottom: 30px;
         line-height: 1.3;
     }
@@ -322,11 +329,12 @@
         font-size: 16px;
 
         position: absolute;
-        bottom: 50px;
+        bottom: 70px;
     }
     .models .link a img {
         width: 25px;
     }
+
 
     /*** service & acc ***/
     .service {
@@ -501,8 +509,7 @@
         background: none;
         border: none;
         text-align: left;
-
-        cursor: pointer;
+        color: #101010;
     }
 
     .footer-menu .sub-menu {
