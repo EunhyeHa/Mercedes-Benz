@@ -5,8 +5,8 @@
     /*** chat ***/
     .chat a {
         position: fixed;
-        right: 15px;
         top: 750px;
+        right: 15px;
     }
 
     /*** header ***/
@@ -15,10 +15,21 @@
         height: 80px;
         padding: 0 15px;
 
-        background-color: rgba(85, 85, 85, 0.7);
+        background-color: #555555;
     }
-    header .logo img {
+    header .logo {
+        display: flex;
+        align-items: center;
+    }
+    header .logo a:nth-child(1) img {
         width: 35px;
+    }
+    header .logo a:nth-child(2) {
+        display: block;
+    }
+    header .logo a:nth-child(2) img {
+        width: 120px;
+        margin-left: 10px;
     }
 
     /* nav */
@@ -33,18 +44,18 @@
     }
 
     /* side-menu */
-    header .side-menu a {
-        color: transparent;
-        position: relative;
-    }
-    header .side-menu a:nth-child(2),
+    header .side-menu a:nth-child(1),
     header .side-menu a:nth-child(3),
     header .side-menu a:nth-child(4) {
         display: none;
     }
-    header .side-menu a:nth-child(5) {
-        display: block;
-        z-index: 99999;
+    header .side-menu a:nth-child(2) {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        padding: 10px;
+    }
+    header .side-menu a:nth-child(2) img {
+        width: 20px;
     }
 
     /*** main ***/
@@ -111,8 +122,6 @@
     }
 
 
-
-
     /*** recommendation ***/
     .recommen {
         width: 100%;
@@ -126,9 +135,17 @@
         display: none;
     }
 
-    .recommen .wrapper .charging-section {
+    .recommen .wrapper .charging-section:nth-child(1) {
+        margin: 0;
+        height: 800px;
+    }
+    .recommen .wrapper .charging-section:nth-child(2) {
         margin: 0;
         height: 750px;
+    }
+    .recommen .wrapper .charging-section:nth-child(3) {
+        margin: 0;
+        height: 700px;
     }
     .recommen .wrapper .charging-section:nth-child(4) {
         height: 0;
@@ -139,7 +156,6 @@
     .recommen .wrapper #recommen3,
     .recommen .wrapper #recommen4 {
         display: block;
-        /* padding: 0; */
     }
     .recommen .wrapper #recommen1 .txt,
     .recommen .wrapper #recommen2 .txt,
@@ -224,21 +240,46 @@
     }
 
     /* options */
-    .models .options .list {
+    .models .options {
         width: 100%;
+        top: 32%;
 
         display: flex;
-        justify-content: center;
+    }
+    .models .options .list {
+        display: flex;
+        justify-content: space-around;
         align-items: center;
+        flex-direction: row;
+        gap: 20px;
     }
 
     /* list */
     .models .options .list a {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: column;
+        /* justify-content: flex-start; */
         align-items: center;
-        align-content: space-between;
+
+        margin: 0 10px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .models .options .list a span {
+        display: block;
+        margin-top: 5px;
+    }
+
+    /* Ensure icons remain visible at small screen sizes */
+    .models .options .list a svg {
+        width: 40px;
+        height: auto;
+        margin-bottom: 5px;
+    }
+    .models .options .list.active a svg {
+        fill: #101010;
+        animation: bounce 0.5s;
     }
 
     /* content */
@@ -251,6 +292,7 @@
         padding-top: 30px;
     }
     .models .content p {
+        height: 0;
         position: absolute;
         top: 420px;
         right: 15px;
@@ -264,7 +306,6 @@
         text-align: center;
 
         display: block;
-
         top: 600px;
     }
     .models .spec h2 {
