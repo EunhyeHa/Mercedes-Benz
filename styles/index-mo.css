@@ -5,7 +5,7 @@
     /*** chat ***/
     .chat a {
         position: fixed;
-        top: 750px;
+        top: 680px;
         right: 15px;
     }
 
@@ -49,13 +49,21 @@
     header .side-menu a:nth-child(4) {
         display: none;
     }
-    header .side-menu a:nth-child(2) {
+    header .side-menu a:nth-child(2) img {
+        width: 25px;
+    }
+
+    /* menu-bar */
+    header .menu-bar {
+        display: block;
+
         background-color: rgba(255, 255, 255, 0.2);
         border-radius: 50%;
         padding: 10px;
+        margin-left: 10px;
     }
-    header .side-menu a:nth-child(2) img {
-        width: 20px;
+    header .menu-bar a img {
+        width: 25px;
     }
 
     /*** main ***/
@@ -459,7 +467,7 @@
     }
     /* 2 번째 */
     .outro .inner2 h1 {
-        width: 50%;
+        width: 60%;
         font-size: 40px;
         line-height: 1.3;
         padding-bottom: 430px;

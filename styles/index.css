@@ -151,6 +151,10 @@ header .side-menu a img {
     width: 24px;
 }
 
+/* menu-bar */
+header .menu-bar {
+    display: none;
+}
 
 /*** 본문 내용 시작 ***/
 /*** main ***/
@@ -800,7 +804,7 @@ header .side-menu a img {
 }
 .outro .inner2 h1 {
     width: 100%;
-    font-family: 'MBK CorpoACon', serif;
+    font-family: 'MBK CorpoA', serif;
     font-size: 120px;
     padding-bottom: 100px;
 }
