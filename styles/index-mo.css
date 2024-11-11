@@ -136,7 +136,7 @@
     }
 
     .recommen .wrapper .charging-section:nth-child(1) {
-        margin: 0;
+        margin: 0 auto;
         height: 800px;
     }
     .recommen .wrapper .charging-section:nth-child(2) {
