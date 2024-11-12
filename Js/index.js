@@ -262,3 +262,27 @@ document.querySelectorAll('.main-menu').forEach(button => {
         subMenu.classList.toggle('active');
     });
 });
+
+
+
+// 모바일
+// 햄버거 메뉴
+document.addEventListener("DOMContentLoaded", function () {
+    const menuLink = document.querySelector(".menu-bar a");
+    const menuImage = document.getElementById("menuImage");
+
+    menuLink.addEventListener("click", function(event) {
+        event.preventDefault(); // 기본 클릭 동작 방지
+
+        // 이미지 경로 설정
+        const defaultImage = "./assets/images/icon/menu_mo.png";
+        const clickedImage = "./assets/images/icon/menu_mo_clicked.png";
+
+        // 현재 이미지와 새로운 이미지 교체
+        if (menuImage.src.includes("menu_mo.png")) {
+            menuImage.src = clickedImage;
+        } else {
+            menuImage.src = defaultImage;
+        }
+    });
+});
