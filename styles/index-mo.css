@@ -69,37 +69,57 @@
     }
 
     /* mo-menu */
+    /* 기본 상태: nav 숨김 */
     header .menu-bar nav {
         /* display: none; */
-        list-style: none;
-        text-decoration: none;
+        visibility: hidden;
         position: fixed;
         top: 80px;
         left: 0;
         width: 430px;
-        height: 700px;
+        height: 100%;
         background-color: #555555;
         color: #ffffff;
+        transform: translateX(-100%);
+        transition: 0.5s ease-in-out;
     }
+
+    header .menu-bar nav.menu-mo-clicked {
+        visibility: visible;
+        /* display: block; */
+        transform: translateX(0);
+    }
+
     header .menu-bar nav .menu-mo {
-        padding: 20px 0 0 30px;
+        padding: 20px 30px;
         margin: 0;
         display: flex;
         flex-direction: column;
         text-align: left;
         list-style: none;
-        /* font-size: 20px; */
+        line-height: 3;
     }
-    header .menu-bar nav .menu-mo li {
+    header .menu-bar nav .menu-mo > li {
         font-size: 20px;
+        border-bottom: 1px #B3B2B3 solid;
     }
-    header .menu-bar nav .menu-mo li a {
+    header .menu-bar nav .menu-mo li a span {
+        font-size: 18px;
         color: #ffffff;
     }
     header .menu-bar nav .menu-mo .sub-mo {
-        padding-left: 10px;
-        line-height: 2;
+        padding-bottom: 5px;
+        line-height: 2.5;
         position: relative;
+
+        overflow: hidden;
+        max-height: 0;
+        transition: 0.5s ease-in-out;
+    }
+
+    /* 서브 메뉴가 활성화된 */
+    header .menu-bar nav .menu-mo .sub-mo.open {
+        max-height: 450px;
     }
 
     header .menu-bar nav .menu-mo .sub-mo a {
@@ -108,25 +128,21 @@
         text-decoration: none;
     }
 
-    /* header .menu-bar nav .sub {
-        list-style: none;
-        padding: 0;
+    /* side-mo */
+    header .menu-bar nav .side-mo {
+        padding: 20px 30px;
         margin: 0;
-        display: none;
-        background-color: #444;
-        width: 200px;
+        display: flex;
+        flex-direction: column;
         text-align: left;
+        list-style: none;
+        line-height: 2.5;
+    }
+    header .menu-bar nav .side-mo li a {
+        color: #B3B2B3;
     }
 
-    header .menu-bar nav .sub li a {
-        display: block;
-        padding: 10px;
-        color: #fff;
-        text-decoration: none;
-    } */
 
-
-    
     /*** main ***/
     .main {
         width: 100%;

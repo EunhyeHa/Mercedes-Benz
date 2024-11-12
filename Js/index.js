@@ -270,19 +270,41 @@ document.querySelectorAll('.main-menu').forEach(button => {
 document.addEventListener("DOMContentLoaded", function () {
     const menuLink = document.querySelector(".menu-bar a");
     const menuImage = document.getElementById("menuImage");
+    const nav = document.querySelector(".menu-bar nav");
 
     menuLink.addEventListener("click", function(event) {
-        event.preventDefault(); // 기본 클릭 동작 방지
+        event.preventDefault();
 
         // 이미지 경로 설정
         const defaultImage = "./assets/images/icon/menu_mo.png";
         const clickedImage = "./assets/images/icon/menu_mo_clicked.png";
 
-        // 현재 이미지와 새로운 이미지 교체
+        // 현재 이미지와 새로운 이미지 교체 및 nav 클래스 토글
         if (menuImage.src.includes("menu_mo.png")) {
             menuImage.src = clickedImage;
+            nav.classList.add("menu-mo-clicked");  // nav 보이기
         } else {
             menuImage.src = defaultImage;
+            nav.classList.remove("menu-mo-clicked");  // nav 숨기기
         }
+    });
+
+    // 서브 메뉴 토글 기능
+    document.querySelectorAll('.menu-mo > li > a').forEach((menuItem) => {
+        menuItem.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const subMenu = this.nextElementSibling;
+
+            // 서브 메뉴가 열리면 다른 서브 메뉴는 닫기
+            document.querySelectorAll('.sub-mo').forEach((sub) => {
+                if (sub !== subMenu) {
+                    sub.classList.remove('open');  // 다른 서브 메뉴 닫기
+                }
+            });
+
+            // 서브 메뉴 토글
+            subMenu.classList.toggle('open'); // 클릭한 서브 메뉴 열기/닫기
+        });
     });
 });
