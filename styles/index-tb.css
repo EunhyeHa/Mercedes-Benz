@@ -123,5 +123,40 @@
     }
 
     /*** service & acc ***/
-    .servie {}
+    .service {
+        padding: 150px 0 150px 80px;
+    }
+    .service .title h2 {
+        font-size: 40px;
+    }
+    .service .title a {
+        font-size: 16px;
+    }
+
+    /* content-list */
+    .service .content {
+        padding-top: 30px;
+        flex-wrap: nowrap;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    .service .content::-webkit-scrollbar {
+        display: none;
+    }
+    .service .content > div {
+        margin-right: 20px;
+    }
+    .service .content .inner1, 
+    .service .content .inner4 {
+        min-width: 300px;
+    }
+    .service .content .inner2 {
+        min-width: 360px;
+    }
+    .service .content .inner3 {
+        min-width: 230px;
+    }
+
 }
