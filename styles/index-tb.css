@@ -4,7 +4,43 @@
 @media screen and (max-width: 1100px) {
     /*** header ***/
     header {
-        width: ;
+        height: 80px;
+    }
+    header .logo img {
+        width: 35px;
+    }
+    /* nav */
+    header nav .main-menu {
+        padding-left: 30px;
+    }
+    header nav .main-menu li {
+        width: 190px;
+        font-size: 14px;
+        position: relative;
+    }
+    header nav .main-menu li a {
+        font-size: 14px;
+        padding-left: 10px;
+    }
+
+    /* sub-menu */
+    header nav .sub-menu {
+        top: 270%;
+    }
+
+    /* side-menu */
+    header .side-menu {
+        width: 120px;
+        justify-content: space-between;
+    }
+    header .side-menu a {
+        margin-left: 0;
+    }
+    header .side-menu .txt {
+        display: none;
+    }
+    header .side-menu a img {
+        width: 20px;
     }
 
     /*** 본문 내용 시작 ***/
@@ -124,39 +160,139 @@
 
     /*** service & acc ***/
     .service {
-        padding: 150px 0 150px 80px;
+        padding: 150px 80px;
     }
     .service .title h2 {
-        font-size: 40px;
+        font-size: 45px;
     }
     .service .title a {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     /* content-list */
     .service .content {
         padding-top: 30px;
-        flex-wrap: nowrap;
-
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-    }
-    .service .content::-webkit-scrollbar {
-        display: none;
     }
     .service .content > div {
-        margin-right: 20px;
+        justify-content: flex-start;
+        padding-right: 15px;
     }
-    .service .content .inner1, 
-    .service .content .inner4 {
-        min-width: 300px;
+    .service .content .inner1 {
+        max-width: 30%;
+    }
+    .service .content .inner1 > img {
+        width: 100%;
+        height: 333px;
     }
     .service .content .inner2 {
-        min-width: 360px;
+        max-width: 40%;
+    }
+    .service .content .inner2 > img {
+        width: 100%;
+        height: 600px;
     }
     .service .content .inner3 {
-        min-width: 230px;
+        max-width: 30%;
+        padding-right: 0;
+    }
+    .service .content .inner3 > img {
+        width: 100%;
+    }
+    .service .content .inner4 {
+        max-width: 30%;
+    }
+    .service .content .inner4 > img {
+        width: 100%;
+        height: 500px;
+    }    
+
+    .service .content .inner1 h3,
+    .service .content .inner2 h3,
+    .service .content .inner3 h3,
+    .service .content .inner4 h3 {
+        width: 100%;
+        padding-top: 27px;
+        font-size: 18px;
+        line-height: 1.3;
     }
 
+    /*** outro ***/
+    .outro .inner1, 
+    .outro .inner2 {
+        height: 700px;
+    }
+    /* 1 번쩨 */
+    .outro .inner1 .txt {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+    }
+    .outro .inner1 .txt h1 {
+        font-size: 90px;
+    }
+    .outro .inner1 .txt p {
+        margin: 0 auto;
+        padding: 30px 180px;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    /* 2 번째 */
+    .outro .inner2 h1 {
+        width: 80%;
+        font-size: 80px;
+    }
+
+    /*** last-txt ***/
+    .last-txt {
+        height: 1000px;
+    }
+    .last-txt > h1 {
+        width: 80%;
+        font-size: 100px;
+        padding-bottom: 150px;
+    }
+
+    /*** footer ***/
+    footer {
+        padding: 120px 80px 0 80px;
+    }
+    /* title */
+    footer h1 {
+        font-size: 70px;
+    }
+    /* footer-menu */
+    footer .footer-menu {
+        width: 100%;
+        padding-top: 40px;
+    }
+    
+    footer .copyright {
+        padding-top: 40px;
+        text-align: left;
+    }
+    footer .copyright .links {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    footer .copyright .links a {
+        padding: 5px 10px 0 10px;
+    }
+    footer .copyright .links a:first-of-type {
+        padding-left: 0;
+    }
+    footer .copyright .links .tb {
+        padding-left: 0;
+    }
+
+    /* bottom */
+    footer .bottom .sns {
+        padding: 0 30px;
+        gap: 15px;
+        align-self: center;
+    }
+    footer .bottom a {
+        width: 25%;
+        justify-content: flex-end;
+        align-self: center;
+    }
 }

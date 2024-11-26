@@ -944,7 +944,7 @@ footer .bottom a {
     display: flex;
     align-items: center;
 }
-footer .bottom>a>img {
+footer .bottom > a > img {
     width: 30px;
     padding: 5px;
     transform: rotate(-90deg);
