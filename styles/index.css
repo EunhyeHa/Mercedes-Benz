@@ -118,7 +118,7 @@ header nav .sub-menu li:hover a {
 }
 header nav .sub-menu li:hover a span {
     border-bottom: none;
-    background-color: none;
+    background-color: transparent;
 }
 
 /* 마지막 list border-bottom 해제 */
