@@ -44,13 +44,8 @@
     }
 
     /* side-menu */
-    header .side-menu a:nth-child(1),
-    header .side-menu a:nth-child(3),
-    header .side-menu a:nth-child(4) {
+    header .side-menu a {
         display: none;
-    }
-    header .side-menu a:nth-child(2) img {
-        width: 25px;
     }
 
     /* 햄버거 메뉴!!!!!!!! */
@@ -88,6 +83,15 @@
         visibility: visible;
         /* display: block; */
         transform: translateX(0);
+    }
+
+    header .menu-bar nav > a.search {
+        display: flex;
+        align-items: center;
+        padding: 20px 30px 0;
+    }
+    header .menu-bar nav > a.search img {
+        width: 25px;
     }
 
     header .menu-bar nav .menu-mo {

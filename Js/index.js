@@ -268,9 +268,13 @@ document.querySelectorAll('.main-menu').forEach(button => {
 // 모바일
 // 햄버거 메뉴
 document.addEventListener("DOMContentLoaded", function () {
-    const menuLink = document.querySelector(".menu-bar a");
+    const menuLink = document.querySelector(".menu-bar > a");
     const menuImage = document.getElementById("menuImage");
     const nav = document.querySelector(".menu-bar nav");
+    const searchLink = document.querySelector("header .side-menu .search");
+    const sideMenu = document.querySelector("header .side-menu");
+    const searchNext = searchLink.nextElementSibling;
+    const menuMo = nav.querySelector(".menu-mo");
 
     menuLink.addEventListener("click", function(event) {
         event.preventDefault();
@@ -280,12 +284,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const clickedImage = "./assets/images/icon/menu_mo_clicked.png";
 
         // 현재 이미지와 새로운 이미지 교체 및 nav 클래스 토글
-        if (menuImage.src.includes("menu_mo.png")) {
+        if (menuImage.src.includes("menu_mo.png") && !menuImage.src.includes("menu_mo_clicked.png")) {
             menuImage.src = clickedImage;
             nav.classList.add("menu-mo-clicked");  // nav 보이기
+            nav.insertBefore(searchLink, menuMo);
         } else {
             menuImage.src = defaultImage;
             nav.classList.remove("menu-mo-clicked");  // nav 숨기기
+            sideMenu.insertBefore(searchLink, searchNext);
         }
     });
 
