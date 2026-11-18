@@ -923,20 +923,26 @@ footer .bottom {
     text-align: left;
     border-top: 1px solid #101010;
     display: flex;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
+    row-gap: 28px;
 }
 footer .bottom .txt {
+    width: 100%;
     line-height: 1.3;
 }
 footer .bottom .txt p {
     font-size: 14px;
 }
 footer .bottom .sns {
-    margin-left: auto;
-    padding-right: 50px;
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 18px;
+}
+footer .bottom .sns img {
+    width: 24px;
+    height: 24px;
 }
 footer .bottom a {
     font-size: 20px;
@@ -944,11 +950,16 @@ footer .bottom a {
     display: flex;
     align-items: center;
 }
+footer .bottom > a {
+    gap: 14px;
+}
 footer .bottom > a > img {
-    width: 30px;
-    padding: 5px;
+    width: 16px;
+    height: 16px;
+    padding: 12px;
+    margin-left: 0;
     transform: rotate(-90deg);
-    margin-left: 10px;
-    border-radius: 50px;
+    border-radius: 50%;
     background-color: #101010;
+    box-sizing: content-box;
 }
