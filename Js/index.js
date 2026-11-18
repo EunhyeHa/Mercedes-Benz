@@ -291,7 +291,20 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             menuImage.src = defaultImage;
             nav.classList.remove("menu-mo-clicked");  // nav 숨기기
+            searchLink.classList.remove("is-typing");
             sideMenu.insertBefore(searchLink, searchNext);
+        }
+    });
+
+    searchLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        searchLink.classList.add("is-typing");
+    });
+
+    document.addEventListener("click", function(event) {
+        if (!searchLink.contains(event.target)) {
+            searchLink.classList.remove("is-typing");
         }
     });
 
