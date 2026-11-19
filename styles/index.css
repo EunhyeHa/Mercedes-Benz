@@ -487,6 +487,11 @@ header .menu-bar {
     display: none;
     transition: 0.3s ease-in-out;
 }
+.models .options .list.active a {
+    display: inline-block;
+    width: 220px;
+    vertical-align: top;
+}
 .models .options .list.active a span {
     display: inline;
 } 

@@ -361,11 +361,12 @@
         display: flex;
     }
     .models .options .list {
-        margin: 0 auto;
+        flex: 1 1 0;
+        min-width: 0;
+        margin: 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: flex-start;
-        flex-direction: row;
     }
 
     /* list */
@@ -375,13 +376,17 @@
         align-items: baseline;
         justify-content: center;
 
-        margin: 0 10px;
+        width: 100%;
+        margin: 0;
         line-height: 1.5;
         text-align: center;
     }
     .models .options .list a span {
         display: none;
+        width: 100%;
         margin-top: 5px;
+        line-height: 1.2;
+        white-space: normal;
     }
     .models .options .list a svg {
         width: 35px;
@@ -389,7 +394,13 @@
         margin: auto;
     }
     .models .options .list.active {
-        display: block;
+        display: flex;
+    }
+    .models .options .list.active a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
     .models .options .list.active a svg {
         animation: none;
