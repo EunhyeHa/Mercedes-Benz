@@ -574,7 +574,7 @@ header .menu-bar {
 
     position: absolute;
     left: 50%;
-    bottom: 130px;
+    bottom: 140px;
     transform: translate(-50%, -50%);
 }
 .models .link a img {
